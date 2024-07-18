@@ -20,12 +20,12 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if( !name || !phone || !date  ) {
+       /* if( !name || !phone || !date  ) {
             tg.MainButton.hide();
         }
-        else {
+        else {*/
             tg.MainButton.show();
-        }
+      /*  }*/
     }, []);
 
     const onChangeCity = (e) => {
@@ -72,7 +72,7 @@ const Form = () => {
                 placeholder={'Дата начала аренды'}
                 value={date}
                 onChange={onChangeDate}/>
-            />
+
 
             <select value={take} onChange={onChangeTake} className={'select'}>
                 <option value={'delivery'}>Доставка автомобиля </option>
