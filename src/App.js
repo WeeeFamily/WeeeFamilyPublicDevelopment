@@ -17,8 +17,7 @@ function App() {
 
   return (
     <div className="App">
-New Web APP - Weee Family.
-        <header />
+        <header/>
         <button onClick={onToggleButton}> toggle</button>
     </div>
   );
