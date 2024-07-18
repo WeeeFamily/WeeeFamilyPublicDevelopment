@@ -20,13 +20,12 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if(!name || !city || !date) {
+        if (!name || !city || !date) {
             tg.MainButton.hide();
         }
         else {
             tg.MainButton.show();
-        }
-    }, []);
+        } }, []);
 
     const onChangeCity = (e) => {
         setCity(e.target.value);
