@@ -11,7 +11,6 @@ const Form = () => {
 
     const {tg} = useTelegram();
 
-    //добавил
      const onSendData = useCallback(() => {
         const data = {
             name,
