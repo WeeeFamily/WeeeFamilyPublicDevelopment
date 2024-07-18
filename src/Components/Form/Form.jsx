@@ -20,12 +20,12 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if (name == null) {
+        if (!name) {
             tg.MainButton.hide();
         }
         else {
             tg.MainButton.show();
-        } }, []);
+        } }, [name]);
 
 
     const onChangeCity = (e) => {
