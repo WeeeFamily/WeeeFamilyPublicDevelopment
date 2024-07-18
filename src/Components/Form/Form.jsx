@@ -74,7 +74,7 @@ const Form = () => {
                 onChange={onChangeDate}/>
             />
 
-            <select value={take} onChange={onChangeTake}className={'select'}>
+            <select value={take} onChange={onChangeTake} className={'select'}>
                 <option value={'delivery'}>Доставка автомобиля </option>
                 <option value={'base'}> Забрать на офисе </option>
             </select>

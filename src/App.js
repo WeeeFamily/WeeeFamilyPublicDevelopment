@@ -23,8 +23,9 @@ function App() {
         </Routes>
 
 
-        {
-            <button onClick={onToggleButton}> toggle</button>}
+        {/*{*/}
+        {/*    <button onClick={onToggleButton}> toggle</button>*/}
+        {/*}*/}
     </div>
   );
 }
