@@ -12,6 +12,15 @@ const Form = () => {
 
     const {tg} = useTelegram();
 
+     const onSendData = useCallback(() => {
+        const data = {
+            date,
+            name,
+            phone,
+
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [phone,name,date])
     useEffect(() => {
         tg.MainButton.setParams({
                 text: 'Забронировать авто'
@@ -20,12 +29,13 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if (!name || !city || !date) {
+        if (!name || !phone || !date) {
             tg.MainButton.hide();
         }
         else {
             tg.MainButton.show();
         } }, []);
+
 
     const onChangeCity = (e) => {
         setCity(e.target.value);
