@@ -20,7 +20,7 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if( name===null || phone===null || date===null  ) {
+        if(!name || !city || !date) {
             tg.MainButton.hide();
         }
         else {
