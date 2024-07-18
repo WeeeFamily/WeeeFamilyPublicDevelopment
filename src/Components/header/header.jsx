@@ -2,7 +2,7 @@ import React from 'react';
 import Button from "../button/Button";
 import {useTelegram} from "../hooks/useTelegram";
 import './header.css';
-import '../button/Button.css'
+
 
 
 const Header = () => {
