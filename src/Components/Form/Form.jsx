@@ -12,15 +12,6 @@ const Form = () => {
 
     const {tg} = useTelegram();
 
-     const onSendData = useCallback(() => {
-        const data = {
-            date,
-            name,
-            phone,
-
-        }
-        tg.sendData(JSON.stringify(data));
-    }, [phone,name,date])
     useEffect(() => {
         tg.MainButton.setParams({
                 text: 'Забронировать авто'
