@@ -10,7 +10,6 @@ const Form = () => {
     const [take, setTake] = React.useState('');
 
     const {tg} = useTelegram();
-
      const onSendData = useCallback(() => {
         const data = {
             name,
