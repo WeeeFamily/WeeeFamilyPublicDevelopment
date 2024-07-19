@@ -19,6 +19,7 @@ const Form = () => {
         tg.sendData(JSON.stringify(data));
     }, [name, phone, date])
 
+
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
