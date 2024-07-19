@@ -68,6 +68,7 @@ const Form = () => {
         <div className={"Form"}>
             <h3>Для бронирования Автомобиля, введите данные ниже:</h3>
             <select value={city} onChange={onChangeCity} className={'select'}>
+                <option value={'value'}>Выберите город:</option>
                 <option value={'Batumi'}>Батуми</option>
                 <option value={'Tbilisi'}>Тбилиси</option>
             </select>
@@ -93,6 +94,7 @@ const Form = () => {
 
 
             <select value={take} onChange={onChangeTake} className={'select'}>
+                <option value={'value'}>Как забрать авто? </option>
                 <option value={'delivery'}>Доставка автомобиля </option>
                 <option value={'base'}> Забрать на офисе </option>
             </select>
