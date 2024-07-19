@@ -89,7 +89,7 @@ const Form = () => {
             <select value={take} onChange={onChangeTake} className={'select'}>
                 <option value={'value'}>Как забрать авто?</option>
                 <option value={'delivery'}>Доставка автомобиля</option>
-                <option value={'base'}> Забрать на офисе</option>
+                <option value={'Office'}> Забрать на офисе</option>
             </select>
 
             <input
