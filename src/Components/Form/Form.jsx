@@ -9,23 +9,24 @@ const Form = () => {
     const [date, setDate] = React.useState('');
     const [take, setTake] = React.useState('');
 
-    const tg = useTelegram();
+    const {tg} = useTelegram();
      const onSendData = useCallback(() => {
         const data = {
             name,
-            phone
+            phone,
+            date
         }
         tg.sendData(JSON.stringify(data));
-    }, [name, phone])
+    }, [name, phone, date])
 
 
-    // useEffect(() => {
-    //     tg.onEvent('mainButtonClicked', onSendData)
-    //     return () => {
-    //         tg.offEvent('mainButtonClicked', onSendData)
-    //     }
-    // }, [onSendData])
-    // //добавил
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [onSendData])
+    //добавил
 
     useEffect(() => {
         tg.MainButton.setParams({
@@ -41,6 +42,7 @@ const Form = () => {
         else {
             tg.MainButton.show();
         } }, [name,phone,date]);
+
 
     const onChangeCity = (e) => {
         setCity(e.target.value);
