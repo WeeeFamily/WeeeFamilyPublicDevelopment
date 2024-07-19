@@ -85,22 +85,19 @@ const Form = () => {
                 type='text' placeholder={'Номер телефона'}
                 value={phone}
                 onChange={onChangePhone}/>
+
+            <select value={take} onChange={onChangeTake} className={'select'}>
+                <option value={'value'}>Как забрать авто?</option>
+                <option value={'delivery'}>Доставка автомобиля</option>
+                <option value={'base'}> Забрать на офисе</option>
+            </select>
+
             <input
                 className={'input'}
                 type='text'
                 placeholder={'Дата начала аренды'}
                 value={date}
                 onChange={onChangeDate}/>
-
-
-            <select value={take} onChange={onChangeTake} className={'select'}>
-                <option value={'value'}>Как забрать авто? </option>
-                <option value={'delivery'}>Доставка автомобиля </option>
-                <option value={'base'}> Забрать на офисе </option>
-            </select>
-
-
-
 
 
         </div>
