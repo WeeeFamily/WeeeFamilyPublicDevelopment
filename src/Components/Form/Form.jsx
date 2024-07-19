@@ -12,12 +12,14 @@ const Form = () => {
     const {tg} = useTelegram();
      const onSendData = useCallback(() => {
         const data = {
+            city,
             name,
             phone,
-            date
+            date,
+            take
         }
         tg.sendData(JSON.stringify(data));
-    }, [name, phone, date])
+    }, [city, name, phone, date, take])
 
 
     useEffect(() => {
