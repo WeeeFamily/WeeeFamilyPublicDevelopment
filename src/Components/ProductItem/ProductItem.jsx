@@ -18,6 +18,7 @@ const ProductItem = ({product, className,onAdd}) => {
             </div>
             <Button className={'add-btn'} onClick = {onAddHandLer}>
                 Rent
+
             </Button>
 
         </div>
