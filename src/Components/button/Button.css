@@ -1,3 +1,8 @@
+:root {
+    --tg-theme-button-color: #007bff; /* Пример синего цвета */
+    --tg-theme-button-text-color: #ffffff; /* Пример белого цвета */
+}
+
 .button {
     padding: 10px 15px;
     background: var(--tg-theme-button-color);
@@ -6,3 +11,4 @@
     outline: none;
     cursor: pointer;
 }
+
