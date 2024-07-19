@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem  from "../ProductItem/ProductItem";
 import {useTelegram} from "../hooks/useTelegram";
+import productItem from "../ProductItem/ProductItem";
 
 
 const products = [
@@ -11,7 +12,7 @@ const products = [
 ]
 
 const getTotalPrice = (item = []) => {
-    return items.reduce((acc, item) => {
+    return item.reduce((acc, item) => {
         return acc += item.price
         },0)
 }
@@ -37,11 +38,13 @@ const ProductList = () => {
         }
         else {
             tg.MainButton.show();
+
             tg.MainButton.setParams({
-                text: `Купить ${getTotalPrice(newItems)}`
+                text:`Купить ${getTotalPrice(newItems)}`
             })
         }
     }
+
 
     return (
         <div className={'list'}>
