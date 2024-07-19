@@ -40,7 +40,7 @@ const ProductList = () => {
             tg.MainButton.show();
 
             tg.MainButton.setParams({
-                text:`Купить ${getTotalPrice(newItems)}`
+                text:`Rent for ${getTotalPrice(newItems)}$`
             })
         }
     }
