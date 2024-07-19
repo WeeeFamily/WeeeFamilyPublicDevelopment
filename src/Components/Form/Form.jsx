@@ -42,7 +42,6 @@ const Form = () => {
             tg.MainButton.show();
         } }, [name,phone,date]);
 
-
     const onChangeCity = (e) => {
         setCity(e.target.value);
     }
