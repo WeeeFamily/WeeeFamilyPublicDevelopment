@@ -9,15 +9,14 @@ const Form = () => {
     const [date, setDate] = React.useState('');
     const [take, setTake] = React.useState('');
 
-    const {tg} = useTelegram();
+    const tg = useTelegram();
      const onSendData = useCallback(() => {
         const data = {
             name,
-            phone,
-            date
+            phone
         }
         tg.sendData(JSON.stringify(data));
-    }, [name, phone, date])
+    }, [name, phone])
 
 
     useEffect(() => {
