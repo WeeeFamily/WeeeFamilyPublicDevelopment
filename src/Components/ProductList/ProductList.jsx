@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem  from "../ProductItem/ProductItem";
 import {useTelegram} from "../hooks/useTelegram";
-import productItem from "../ProductItem/ProductItem";
+
 
 
 const products = [
@@ -13,7 +13,7 @@ const products = [
 
 const getTotalPrice = (item = []) => {
     return item.reduce((acc, item) => {
-        return acc += item.price
+        return acc+=item.price
         },0)
 }
 const ProductList = () => {
