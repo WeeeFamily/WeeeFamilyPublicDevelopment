@@ -1,63 +1,18 @@
-/* Общий стиль для кнопки */
 .button {
     padding: 10px 20px;
     border: none; /* Убрать границу */
     border-radius: 5px; /* Закругленные углы */
-    background-color: #007bff; /* Фоновый цвет */
+    background-color: #dc3545; /* Красный фоновый цвет */
     color: #fff; /* Цвет текста */
     font-size: 16px; /* Размер шрифта */
     cursor: pointer; /* Курсор указатель */
     transition: background-color 0.3s ease; /* Плавное изменение цвета */
-    display: inline-block; /* Отображение как встроенный блок */
-    text-align: center; /* Центрирование текста */
-    text-decoration: none; /* Убрать подчеркивание */
 }
 
 /* Ховер эффект для кнопки */
 .button:hover {
-    background-color: #0056b3; /* Темный фон при наведении */
+    background-color: #c82333; /* Темный красный фон при наведении */
 }
-
-/* Дополнительный класс для увеличенного размера */
-.button.large {
-    padding: 15px 30px;
-    font-size: 18px;
-}
-
-/* Дополнительный класс для маленького размера */
-.button.small {
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-/* Дополнительный класс для вторичного стиля */
-.button.secondary {
-    background-color: #6c757d;
-}
-
-.button.secondary:hover {
-    background-color: #5a6268;
-}
-
-/* Дополнительный класс для успеха */
-.button.success {
-    background-color: #28a745;
-}
-
-.button.success:hover {
-    background-color: #218838;
-}
-
-/* Дополнительный класс для опасности */
-.button.danger {
-    background-color: #dc3545;
-}
-
-.button.danger:hover {
-    background-color: #c82333;
-}
-
-
 
 
 
