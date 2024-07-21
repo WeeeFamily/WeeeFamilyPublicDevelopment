@@ -11,53 +11,53 @@ const products = [
     {id: '3', title: 'Dodje Chardger', price: 110, description: 'Идеально подъодит для города и съемок, езды за городом',img:'/PhotoCars/dodge-charger.jpg'},
 ]
 
-// const getTotalPrice = (item = []) => {
-//     return item.reduce((acc, item) => {
-//         return acc+=item.price
-//         },0)
-// }
+const getTotalPrice = (item = []) => {
+    return item.reduce((acc, item) => {
+        return acc+=item.price
+        },0)
+}
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram();
-    // const onAdd = (product) => {
-    //
-    //     const alredyAdded = addedItems.find(item => item.id === product.id);
-    //     let newItems= [];
-    //
-    //     if(alredyAdded) {
-    //         newItems = addedItems.filter(item => item.id !== product.id);
-    //     }
-    //     else {
-    //         newItems = [...addedItems, product];
-    //     }
-    //
-    //     setAddedItems(newItems)
-    //
-    //     if (newItems.length === 0) {
-    //         tg.MainButton.hide();
-    //     }
-    //     else {
-    //         tg.MainButton.show();
-    //
-    //         tg.MainButton.setParams({
-    //             text:`Rent for ${getTotalPrice(newItems)}$`
-    //         })
-    //     }
-    // }
+    const onAdd = (product) => {
+
+        const alredyAdded = addedItems.find(item => item.id === product.id);
+        let newItems= [];
+
+        if(alredyAdded) {
+            newItems = addedItems.filter(item => item.id !== product.id);
+        }
+        else {
+            newItems = [...addedItems, product];
+        }
+
+        setAddedItems(newItems)
+
+        if (newItems.length === 0) {
+            tg.MainButton.hide();
+        }
+        else {
+            tg.MainButton.show();
+
+            tg.MainButton.setParams({
+                text:`Rent for ${getTotalPrice(newItems)}$`
+            })
+        }
+    }
 
 
-    // return (
-    //     <div className={'list'}>
-    //         {products.map(item => (
-    //        <ProductItem
-    //         product={item}
-    //         onAdd={onAdd}
-    //         className={'item'}
-    //             />
-    //          ))}
-    //
-    //     </div>
-    // );
+    return (
+        <div className={'list'}>
+            {products.map(item => (
+           <ProductItem
+            product={item}
+            onAdd={onAdd}
+            className={'item'}
+                />
+             ))}
+
+        </div>
+    );
 };
 
 

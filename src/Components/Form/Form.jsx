@@ -98,9 +98,9 @@ const Form = () => {
 
             <div className="input-group">
                 <select value={city} onChange={onChangeCity} className={'select'}>
-                    <option value={'value'}>Выберите город:</option>
-                    <option value={'Batumi'}>Батуми</option>
-                    <option value={'Tbilisi'}>Тбилиси</option>
+                    <option value={'value'}>Choose City</option>
+                    <option value={'Batumi'}>Batumi</option>
+                    <option value={'Tbilisi'}>Tbilisi</option>
                 </select>
                 <i className="fas fa-city"></i>
             </div>
@@ -108,7 +108,7 @@ const Form = () => {
                 <input
                     className={'input'}
                     type="text"
-                    placeholder={'Ваше Имя'}
+                    placeholder={'Your Name'}
                     value={name}
                     onChange={onChangeName}
                     required
@@ -119,7 +119,7 @@ const Form = () => {
                 <input
                     className={'input'}
                     type='text'
-                    placeholder={'Номер телефона'}
+                    placeholder={'Phone Number'}
                     value={phone}
                     onChange={onChangePhone}
                     required
@@ -128,9 +128,9 @@ const Form = () => {
             </div>
             <div className="input-group">
                 <select value={take} onChange={onChangeTake} className={'select'}>
-                    <option value={'value'}>Как забрать авто?</option>
-                    <option value={'delivery'}>Доставка автомобиля</option>
-                    <option value={'Office'}>Забрать на офисе</option>
+                    <option value={'value'}>How to pick up the car?</option>
+                    <option value={'delivery'}>Delivery of the car to the client</option>
+                    <option value={'Office'}>Pick up at the office</option>
                 </select>
                 <i className="fas fa-car"></i>
             </div>
