@@ -13,6 +13,8 @@ const Form = () => {
     const [take, setTake] = React.useState('');
 
     const { tg } = useTelegram();
+    const location = useLocation();
+    const car = location.state?.car || '';
     const chatId = '-1002135710194'; // Добавьте ваш chat_id
     const botToken = '7356584757:AAFMITZXblh8k-FsOJdUK4yr62sUmAxG4gw';
 
@@ -22,10 +24,11 @@ const Form = () => {
             name,
             phone,
             date,
-            take
+            take,
+            car
         };
 
-        const message = `Name: ${name}\nCity: ${city}\nPhone: ${phone}\nDate: ${date}\nDelivery Method: ${take}`;
+        const message = `Name: ${name}\nCity: ${city}\nPhone: ${phone}\nDate: ${date}\nDelivery Method: ${take}\nCar: ${car}`;
 
         axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             chat_id: chatId,

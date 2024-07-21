@@ -8,8 +8,8 @@ const ProductItem = ({product, className,onAdd}) => {
     const navigate = useNavigate();
     const onAddHandLer = ()=> {
         // onAdd(product);
-        navigate('/form');
-    }
+        navigate('/form', { state: { car: product.title } });
+    };
 
     return (
         <div className={'product' + className}>
