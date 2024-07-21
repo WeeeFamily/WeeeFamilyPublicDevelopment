@@ -13,7 +13,7 @@
     padding: 0; /* Убираем поля по умолчанию */
     color: #007bff; /* Цвет текста по умолчанию */
 }
-/*.close_button {*/
-/*    background-color: firebrick;*/
+.return_button {
+    background-color: black;
 
-/*}*/
+}

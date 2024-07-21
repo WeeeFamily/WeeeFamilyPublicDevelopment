@@ -1,6 +1,8 @@
 import React, {useCallback, useEffect} from 'react';
 import './Form.css';
 import {useTelegram} from "../hooks/useTelegram";
+import {useNavigate} from "react-router-dom";
+import Button from "../button/Button";
 const Form = () => {
 
     const [city, setCity] = React.useState('');
@@ -20,6 +22,7 @@ const Form = () => {
         }
         tg.sendData(JSON.stringify(data));
     }, [city, name, phone, date, take])
+
 
 
     useEffect(() => {
