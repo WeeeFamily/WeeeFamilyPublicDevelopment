@@ -10,6 +10,7 @@ function App() {
     const {onToggleButton,tg} =useTelegram();
 
     useEffect(() => {
+
         tg.ready();
     },[])
 
@@ -17,10 +18,9 @@ function App() {
     <div className="App">
         <Header/>
         <Routes>
-            <Route path="/" element={<ProductList/>}/>
-            <Route path={'/form'} element={<FormPage/>}/>
+            <Route index element={<ProductList/>}/>
+            <Route path={'form'} element={<Form/>}/>
         </Routes>
-
 
     </div>
   );
