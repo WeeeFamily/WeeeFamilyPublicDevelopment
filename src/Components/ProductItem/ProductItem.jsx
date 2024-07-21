@@ -13,9 +13,9 @@ const ProductItem = ({product, className,onAdd}) => {
 
     return (
         <div className={'product' + className}>
-            <div className={'img'}/>
-            <div className={'title'}>{product.title}/</div>
-            <div className={'description'}>{product.description}/</div>
+            <div className={'img'}>t{product.img}/</div>
+            <div className={'title'}>{product.title}</div>
+            <div className={'description'}>{product.description}</div>
             <div className={'price'}>
              <span>Стоимость: <b>{product.price}</b> </span>
             </div>

@@ -12,6 +12,7 @@
 }
 .add_rent_car {
     margin-right: auto;
+    
 }
 
 /* Ховер эффект для кнопки */
@@ -63,7 +64,7 @@
 /* Стиль для цены */
 .price {
     font-size: 16px; /* Размер шрифта */
-    margin-bottom: 20px;
+
 }
 
 .price span b {
