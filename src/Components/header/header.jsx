@@ -10,7 +10,7 @@ const Header = () => {
 
 
     return (
-        <div className={'header'}>
+        <div className={'header'}>4
             <Button onClick={onClose}>Закрыть</Button>
             <Button onClick={onClose}>Заказать машину</Button>
             <span className={'username'}>
