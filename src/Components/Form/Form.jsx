@@ -84,39 +84,65 @@ const Form = () => {
     return (
         <div className={"Form"}>
             <h3>Для бронирования Автомобиля, введите данные ниже:</h3>
-            <select value={city} onChange={onChangeCity} className={'select'}>
-                <option value={'value'}>Выберите город:</option>
-                <option value={'Batumi'}>Батуми</option>
-                <option value={'Tbilisi'}>Тбилиси</option>
-            </select>
-            <input
-                className={'input'}
-                type="text"
-                placeholder={'Ваше Имя'}
-                value={name}
-                onChange={onChangeName}
-                required
-            />
-            <input
-                className={'input'}
-                type='text' placeholder={'Номер телефона'}
-                value={phone}
-                onChange={onChangePhone}
-                required
-            />
-            <select value={take} onChange={onChangeTake} className={'select'}>
-                <option value={'value'}>Как забрать авто?</option>
-                <option value={'delivery'}>Доставка автомобиля</option>
-                <option value={'Office'}> Забрать на офисе</option>
-            </select>
-            <input
-                className={'input'}
-                type='date'
-                placeholder={'Дата начала аренды'}
-                value={date}
-                onChange={onChangeDate}
-                required
-            />
+            <div className="input-group">
+                <select value={city} onChange={onChangeCity} className={'select'}>
+                    <option value={'value'}>Выберите город:</option>
+                    <option value={'Batumi'}>Батуми</option>
+                    <option value={'Tbilisi'}>Тбилиси</option>
+                </select>
+                <i className="fas fa-city"></i>
+            </div>
+            <div className="input-group">
+                <input
+                    className={'input'}
+                    type="text"
+                    placeholder={'Ваше Имя'}
+                    value={name}
+                    onChange={onChangeName}
+                    required
+                />
+                <i className="fas fa-user"></i>
+            </div>
+            <div className="input-group">
+                <input
+                    className={'input'}
+                    type='text'
+                    placeholder={'Номер телефона'}
+                    value={phone}
+                    onChange={onChangePhone}
+                    required
+                />
+                <i className="fas fa-phone"></i>
+            </div>
+            <div className="input-group">
+                <select value={take} onChange={onChangeTake} className={'select'}>
+                    <option value={'value'}>Как забрать авто?</option>
+                    <option value={'delivery'}>Доставка автомобиля</option>
+                    <option value={'Office'}>Забрать на офисе</option>
+                </select>
+                <i className="fas fa-car"></i>
+            </div>
+            <div className="input-group">
+                <input
+                    className={'input'}
+                    type='date'
+                    placeholder={'Дата начала аренды'}
+                    value={date}
+                    onChange={onChangeDate}
+                    required
+                />
+                <i className="fas fa-calendar-alt"></i>
+            </div>
+            <div className="input-group">
+                <input
+                    className={'input'}
+                    type='text'
+                    placeholder={'Выбранная машина'}
+                    value={car}
+                    readOnly
+                />
+                <i className="fas fa-car-side"></i>
+            </div>
         </div>
     );
 };

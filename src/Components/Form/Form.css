@@ -52,7 +52,27 @@ input[type="date"] {
     font-size: 16px;
 }
 
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
 
+.input-group .input, .input-group .select {
+    width: 100%;
+    padding-left: 40px; /* Отступ слева для иконки */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #666;
+}
 
 
 /*.form {*/
