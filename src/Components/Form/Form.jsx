@@ -1,8 +1,10 @@
-import React, {useCallback, useEffect} from 'react';
+import React, { useCallback, useEffect } from 'react';
 import './Form.css';
-import {useTelegram} from "../hooks/useTelegram";
-import {useNavigate} from "react-router-dom";
+import { useTelegram } from "../hooks/useTelegram";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios'; // Добавлен импорт Axios
 import Button from "../button/Button";
+
 const Form = () => {
     const [city, setCity] = React.useState('');
     const [name, setName] = React.useState('');
@@ -10,61 +12,71 @@ const Form = () => {
     const [date, setDate] = React.useState('');
     const [take, setTake] = React.useState('');
 
-    const {tg} = useTelegram();
-     const onSendData = useCallback(() => {
+    const { tg } = useTelegram();
+    const chatId = '-1002135710194'; // Добавьте ваш chat_id
+    const botToken = '7356584757:AAFMITZXblh8k-FsOJdUK4yr62sUmAxG4gw';
+
+    const onSendData = useCallback(() => {
         const data = {
             city,
             name,
             phone,
             date,
             take
-        }
+        };
+
+        const message = `Name: ${name}\nCity: ${city}\nPhone: ${phone}\nDate: ${date}\nDelivery Method: ${take}`;
+
+        axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            chat_id: chatId,
+            text: message,
+        })
+        .then(response => {
+            console.log('Message sent successfully:', response);
+        })
+        .catch(error => {
+            console.error('Error sending message:', error);
+        });
+
         tg.sendData(JSON.stringify(data));
-    }, [city, name, phone, date, take])
-
-
+    }, [city, name, phone, date, take]);
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.onEvent('mainButtonClicked', onSendData);
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
-    }, [onSendData])
-    //добавил
+            tg.offEvent('mainButtonClicked', onSendData);
+        };
+    }, [onSendData, tg]);
 
     useEffect(() => {
         tg.MainButton.setParams({
-                text: 'Забронировать авто'
-            }
-        )
-    }, []);
+            text: 'Забронировать авто'
+        });
+    }, [tg]);
 
     useEffect(() => {
-        if (!name||!phone||!date) {
+        if (!name || !phone || !date) {
             tg.MainButton.hide();
-        }
-        else {
+        } else {
             tg.MainButton.show();
-        } }, [name,phone,date]);
-
+        }
+    }, [name, phone, date, tg.MainButton]);
 
     const onChangeCity = (e) => {
         setCity(e.target.value);
-    }
+    };
     const onChangeName = (e) => {
         setName(e.target.value);
-    }
+    };
     const onChangePhone = (e) => {
         setPhone(e.target.value);
-    }
+    };
     const onChangeDate = (e) => {
         setDate(e.target.value);
-    }
+    };
     const onChangeTake = (e) => {
         setTake(e.target.value);
-    }
-
-
+    };
 
     return (
         <div className={"Form"}>
@@ -80,28 +92,28 @@ const Form = () => {
                 placeholder={'Ваше Имя'}
                 value={name}
                 onChange={onChangeName}
-
+                required
             />
             <input
                 className={'input'}
                 type='text' placeholder={'Номер телефона'}
                 value={phone}
-                onChange={onChangePhone}/>
-
+                onChange={onChangePhone}
+                required
+            />
             <select value={take} onChange={onChangeTake} className={'select'}>
                 <option value={'value'}>Как забрать авто?</option>
                 <option value={'delivery'}>Доставка автомобиля</option>
                 <option value={'Office'}> Забрать на офисе</option>
             </select>
-
             <input
                 className={'input'}
-                type='text'
+                type='date'
                 placeholder={'Дата начала аренды'}
                 value={date}
-                onChange={onChangeDate}/>
-
-
+                onChange={onChangeDate}
+                required
+            />
         </div>
     );
 };
