@@ -17,9 +17,11 @@ const Form = () => {
 
         const message = `Name: ${name}\nCity: ${city}\nCar: ${car}`;
         const chatId = '-1002135710194';
+        const token = '7356584757:AAFMITZXblh8k-FsOJdUK4yr62sUmAxG4gw';
+
 
         try {
-            await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
                 chat_id: chatId,
                 text: message,
             });
