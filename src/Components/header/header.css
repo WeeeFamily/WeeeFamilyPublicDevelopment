@@ -7,7 +7,11 @@
 
 }
 .username {
-    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif; /* Используем шрифт Arial, запасной шрифт sans-serif */
+    font-size: 16px; /* Размер шрифта по умолчанию */
+    padding: 0; /* Убираем поля по умолчанию */
+    color: #007bff; /* Цвет текста по умолчанию */
 }
 /*.close_button {*/
 /*    background-color: firebrick;*/
