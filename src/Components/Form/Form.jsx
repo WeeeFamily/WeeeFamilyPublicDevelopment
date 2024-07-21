@@ -9,7 +9,7 @@ const Form = () => {
     const [city, setCity] = React.useState('');
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
-    const [date, setDate] = React.useState('');
+    const [date, setDate] = React.useState(new Date().toISOString().split('T')[0]);
     const [take, setTake] = React.useState('');
 
     const { tg } = useTelegram();
