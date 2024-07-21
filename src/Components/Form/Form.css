@@ -9,7 +9,7 @@
     font-size: 24px;
     font-weight: 700; /* Жирный шрифт */
     text-align: center;
-    margin-bottom: 20px;
+    padding-top: 16px;
     color: #333;
 }
 .form {
