@@ -1,6 +1,16 @@
 /* Основной стиль формы */
 * {
-    padding: 1px;
+    padding: 1px; /* Убираем padding по умолчанию */
+    margin: 1px; /* Убираем margin по умолчанию */
+    box-sizing: border-box; /* Обеспечиваем, чтобы padding и border учитывались в общей ширине и высоте элемента */
+}
+.h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700; /* Жирный шрифт */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
 .form {
     display: flex;
@@ -19,7 +29,7 @@
 .input {
     width: 100%; /* Полная ширина внутри формы */
     padding: 10px;
-    margin-top: 15px;
+    padding-left: 40px; /* Отступ слева для иконки, если иконка присутствует */
     border: 1px solid #ccc; /* Граница поля */
     border-radius: 5px; /* Закругленные углы */
     font-size: 16px; /* Размер шрифта */
@@ -29,7 +39,7 @@
 .select {
     width: 100%; /* Полная ширина внутри формы */
     padding: 10px;
-    margin-top: 15px;
+    padding-left: 40px; /* Отступ слева для иконки, если иконка присутствует */
     border: 1px solid #ccc; /* Граница поля */
     border-radius: 5px; /* Закругленные углы */
     font-size: 16px; /* Размер шрифта */
@@ -38,15 +48,13 @@
 
 .return_button {
     background-color: #007bff;
-    /*padding: 7px;*/
-    /*margin-right: auto;*/
 }
 
 input[type="date"] {
     display: block;
     width: 100%;
     padding: 10px;
-    margin-top: 15px;
+    padding-left: 40px; /* Отступ слева для иконки, если иконка присутствует */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -59,10 +67,11 @@ input[type="date"] {
     margin-top: 15px;
 }
 
-.input-group .input, .input-group .select {
+.input-group .input,
+.input-group .select,
+.input-group input[type="date"] {
     width: 100%;
     padding-left: 40px; /* Отступ слева для иконки */
-    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
@@ -73,20 +82,3 @@ input[type="date"] {
     font-size: 18px;
     color: #666;
 }
-
-
-/*.form {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    width: 100%;*/
-/*    padding: 20px;*/
-/*}*/
-/*.input {*/
-/*    width: 80%;*/
-/*    padding: 10px;*/
-/*    margin-top: 15px;*/
-/*}*/
-/*.select {*/
-/*    padding: 10px;*/
-/*    margin-top: 15px;*/
-/*}*/

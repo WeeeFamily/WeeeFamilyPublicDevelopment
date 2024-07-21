@@ -83,7 +83,19 @@ const Form = () => {
 
     return (
         <div className={"Form"}>
-            <h3>Для бронирования Автомобиля, введите данные ниже:</h3>
+            <h2 className="h2">Fill out the form to Rent Car 👇</h2>
+
+            <div className="input-group">
+                <input
+                    className={'input'}
+                    type='text'
+                    placeholder={'Выбранная машина'}
+                    value={car}
+                    readOnly
+                />
+                <i className="fas fa-car-side"></i>
+            </div>
+
             <div className="input-group">
                 <select value={city} onChange={onChangeCity} className={'select'}>
                     <option value={'value'}>Выберите город:</option>
@@ -133,16 +145,7 @@ const Form = () => {
                 />
                 <i className="fas fa-calendar-alt"></i>
             </div>
-            <div className="input-group">
-                <input
-                    className={'input'}
-                    type='text'
-                    placeholder={'Выбранная машина'}
-                    value={car}
-                    readOnly
-                />
-                <i className="fas fa-car-side"></i>
-            </div>
+
         </div>
     );
 };

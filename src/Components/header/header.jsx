@@ -20,11 +20,11 @@ const location = useLocation();
         <div className='header'>
             {location.pathname !== '/' && (
                 <Button className='return_button' onClick={onAddHandLer}>
-                    Back
+                    <i className="fas fa-arrow-left"></i> {/* Иконка назад */}
                 </Button>
             )}
             <span className='username'>
-                @{user?.username}
+               Your login: @{user?.username}
             </span>
         </div>
     );
