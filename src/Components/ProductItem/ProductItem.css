@@ -1,20 +1,93 @@
+/* Общий стиль для компонента продукта */
 .product {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--tg-theme-button-color);
-    padding: 15px;
-    width: 170px;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Ограничение ширины продукта */
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc; /* Граница продукта */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #f9f9f9; /* Фоновый цвет */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+    text-align: center; /* Центрирование текста */
 }
+
+/* Стиль для изображения */
 .img {
     width: 100%;
-    background: lightgray;
-    height: 100px;
-    margin: 0 auto;
-    background: var(--tg-theme-button-color);
+    height: 200px; /* Высота изображения */
+    background-color: #e0e0e0; /* Фоновый цвет, если нет изображения */
+    margin-bottom: 15px;
+    border-radius: 10px; /* Закругленные углы */
+    background-size: cover; /* Кадрирование изображения */
+    background-position: center; /* Центрирование изображения */
 }
+
+/* Стиль для заголовка */
+.title {
+    font-size: 20px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px;
+}
+
+/* Стиль для описания */
 .description {
-    font-size: 0.8em;
+    font-size: 14px; /* Размер шрифта */
+    color: #666; /* Цвет текста */
+    margin-bottom: 15px;
 }
+
+/* Стиль для цены */
+.price {
+    font-size: 16px; /* Размер шрифта */
+    margin-bottom: 20px;
+}
+
+.price span b {
+    color: #007bff; /* Цвет выделенной цены */
+}
+
+/* Стиль для кнопки */
 .add-btn {
-    width: 100%;
+    padding: 10px 20px;
+    border: none; /* Убрать границу */
+    border-radius: 5px; /* Закругленные углы */
+    background-color: #007bff; /* Фоновый цвет */
+    color: #fff; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор указатель */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
 }
+
+/* Ховер эффект для кнопки */
+.add-btn:hover {
+    background-color: #0056b3; /* Темный фон при наведении */
+}
+
+
+
+
+
+
+/*.product {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    border: 1px solid var(--tg-theme-button-color);*/
+/*    padding: 15px;*/
+/*    width: 170px;*/
+/*}*/
+/*.img {*/
+/*    width: 100%;*/
+/*    background: lightgray;*/
+/*    height: 100px;*/
+/*    margin: 0 auto;*/
+/*    background: var(--tg-theme-button-color);*/
+/*}*/
+/*.description {*/
+/*    font-size: 0.8em;*/
+/*}*/
+/*.add-btn {*/
+/*    width: 100%;*/
+/*}*/
