@@ -50,21 +50,21 @@
 }
 
 /* Стиль для кнопки */
-.add-btn {
-    padding: 10px 20px;
-    border: none; /* Убрать границу */
-    border-radius: 5px; /* Закругленные углы */
-    background-color: #007bff; /* Фоновый цвет */
-    color: #fff; /* Цвет текста */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор указатель */
-    transition: background-color 0.3s ease; /* Плавное изменение цвета */
-}
+/*.add-btn {*/
+/*    padding: 10px 20px;*/
+/*    border: none; !* Убрать границу *!*/
+/*    border-radius: 5px; !* Закругленные углы *!*/
+/*    background-color: #007bff; !* Фоновый цвет *!*/
+/*    color: #fff; !* Цвет текста *!*/
+/*    font-size: 16px; !* Размер шрифта *!*/
+/*    cursor: pointer; !* Курсор указатель *!*/
+/*    transition: background-color 0.3s ease; !* Плавное изменение цвета *!*/
+/*}*/
 
-/* Ховер эффект для кнопки */
-.add-btn:hover {
-    background-color: #0056b3; /* Темный фон при наведении */
-}
+/*!* Ховер эффект для кнопки *!*/
+/*.add-btn:hover {*/
+/*    background-color: #0056b3; !* Темный фон при наведении *!*/
+/*}*/
 
 
 
