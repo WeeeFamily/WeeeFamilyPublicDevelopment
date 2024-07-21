@@ -9,7 +9,7 @@
     margin: 20px;
     border: 1px solid #ccc; /* Граница продукта */
     border-radius: 10px; /* Закругленные углы */
-    background-color: #f9f9f9; /* Фоновый цвет */
+    background-color: #5c0707; /* Фоновый цвет */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
     text-align: center; /* Центрирование текста */
 }
@@ -34,7 +34,7 @@
 
 /* Стиль для описания */
 .description {
-    font-size: 14px; /* Размер шрифта */
+    font-size: 21px; /* Размер шрифта */
     color: #666; /* Цвет текста */
     margin-bottom: 15px;
 }
