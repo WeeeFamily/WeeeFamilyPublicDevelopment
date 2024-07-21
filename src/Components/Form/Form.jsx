@@ -3,34 +3,12 @@ import './Form.css';
 import {useTelegram} from "../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
 import Button from "../button/Button";
-import axios from 'axios';
 const Form = () => {
-
     const [city, setCity] = React.useState('');
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [date, setDate] = React.useState('');
     const [take, setTake] = React.useState('');
-
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const message = `Name: ${name}\nCity: ${city}\nCar: ${car}`;
-        const chatId = '-1002135710194';
-        const token = '7356584757:AAFMITZXblh8k-FsOJdUK4yr62sUmAxG4gw';
-
-
-        try {
-            await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-                chat_id: chatId,
-                text: message,
-            });
-            alert('Message sent successfully');
-        } catch (error) {
-            console.error('Error sending message:', error);
-            alert('Failed to send message');
-        }
-    };
 
     const {tg} = useTelegram();
      const onSendData = useCallback(() => {

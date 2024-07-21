@@ -1,4 +1,5 @@
 import './App.css';
+import FormPage from './FormPage';
 import {useEffect} from "react";
 import {useTelegram} from "./Components/hooks/useTelegram";
 import {Route,Routes} from "react-router-dom";
@@ -17,8 +18,8 @@ function App() {
     <div className="App">
         <Header/>
         <Routes>
-            <Route index element={<ProductList/>}/>
-            <Route path={'form'} element={<Form/>}/>
+            <Route path="/" element={<ProductList/>}/>
+            <Route path={'/form'} element={<FormPage/>}/>
         </Routes>
 
 
