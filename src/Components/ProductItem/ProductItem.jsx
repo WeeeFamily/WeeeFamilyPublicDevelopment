@@ -1,11 +1,14 @@
 import React from 'react';
 import Button from "../button/Button";
 import './ProductItem.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const ProductItem = ({product, className,onAdd}) => {
+    const navigate = useNavigate();
     const onAddHandLer = ()=> {
-        onAdd(product);
+        // onAdd(product);
+        navigate('/form');
     }
 
     return (
@@ -17,8 +20,7 @@ const ProductItem = ({product, className,onAdd}) => {
              <span>Стоимость: <b>{product.price}</b> </span>
             </div>
             <Button className={'add-btn'} onClick = {onAddHandLer}>
-                Rent
-
+                Rent Car
             </Button>
 
         </div>

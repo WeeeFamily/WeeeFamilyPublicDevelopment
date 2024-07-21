@@ -10,7 +10,6 @@ function App() {
     const {onToggleButton,tg} =useTelegram();
 
     useEffect(() => {
-
         tg.ready();
     },[])
 
@@ -22,7 +21,7 @@ function App() {
             <Route path={'form'} element={<Form/>}/>
         </Routes>
 
-        
+
     </div>
   );
 }
