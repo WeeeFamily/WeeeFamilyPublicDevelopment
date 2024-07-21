@@ -1,6 +1,7 @@
 /* Общий стиль для компонента продукта */
 .add-btn {
     padding: 10px 20px;
+    margin-left: auto;
     border: none; /* Убрать границу */
     border-radius: 5px; /* Закругленные углы */
     background-color: #007bff; /* Фоновый цвет */
@@ -8,6 +9,9 @@
     font-size: 16px; /* Размер шрифта */
     cursor: pointer; /* Курсор указатель */
     transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+.add_rent_car {
+    margin-right: auto;
 }
 
 /* Ховер эффект для кнопки */
