@@ -1,15 +1,72 @@
+/* Основной стиль формы */
 .form {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 500px; /* Ограничение ширины формы */
     padding: 20px;
+    margin: 0 auto; /* Центрирование формы */
+    border: 1px solid #ccc; /* Граница формы */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #f9f9f9; /* Фоновый цвет */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
 }
+
+/* Стиль для полей ввода */
 .input {
-    width: 80%;
+    width: 100%; /* Полная ширина внутри формы */
     padding: 10px;
     margin-top: 15px;
+    border: 1px solid #ccc; /* Граница поля */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
 }
+
+/* Стиль для выпадающего списка */
 .select {
+    width: 100%; /* Полная ширина внутри формы */
     padding: 10px;
     margin-top: 15px;
+    border: 1px solid #ccc; /* Граница поля */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    background-color: #fff; /* Фоновый цвет */
 }
+
+/* Стиль для кнопки */
+.button {
+    padding: 10px;
+    margin-top: 20px;
+    border: none; /* Убрать границу */
+    border-radius: 5px; /* Закругленные углы */
+    background-color: #007bff; /* Фоновый цвет */
+    color: #fff; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор указатель */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Ховер эффект для кнопки */
+.button:hover {
+    background-color: #0056b3; /* Темный фон при наведении */
+}
+
+
+
+
+
+/*.form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 100%;*/
+/*    padding: 20px;*/
+/*}*/
+/*.input {*/
+/*    width: 80%;*/
+/*    padding: 10px;*/
+/*    margin-top: 15px;*/
+/*}*/
+/*.select {*/
+/*    padding: 10px;*/
+/*    margin-top: 15px;*/
+/*}*/
