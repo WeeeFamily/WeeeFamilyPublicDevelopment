@@ -1,5 +1,4 @@
 import './App.css';
-import FormPage from './FormPage';
 import {useEffect} from "react";
 import {useTelegram} from "./Components/hooks/useTelegram";
 import {Route,Routes} from "react-router-dom";
