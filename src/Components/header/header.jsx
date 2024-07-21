@@ -20,7 +20,7 @@ const location = useLocation();
         <div className='header'>
             {location.pathname !== '/' && (
                 <Button className='return_button' onClick={onAddHandLer}>
-                    Return
+                    Back
                 </Button>
             )}
             <span className='username'>

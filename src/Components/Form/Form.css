@@ -1,4 +1,7 @@
 /* Основной стиль формы */
+* {
+    padding: 1px;
+}
 .form {
     display: flex;
     flex-direction: column;
@@ -34,8 +37,9 @@
 }
 
 .return_button {
-    background-color: black;
-
+    background-color: #007bff;
+    /*padding: 7px;*/
+    /*margin-right: auto;*/
 }
 
 

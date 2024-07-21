@@ -3,17 +3,13 @@
     height: 50px;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 4px;
 
 }
 .username {
     margin-right: auto;
     font-family: 'Arial', sans-serif; /* Используем шрифт Arial, запасной шрифт sans-serif */
     font-size: 16px; /* Размер шрифта по умолчанию */
-    padding: 0; /* Убираем поля по умолчанию */
+    padding: 9px; /* Убираем поля по умолчанию */
     color: #007bff; /* Цвет текста по умолчанию */
-}
-.return_button {
-    background-color: black;
-
 }

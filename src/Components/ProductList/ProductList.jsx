@@ -8,7 +8,7 @@ import {useTelegram} from "../hooks/useTelegram";
 const products = [
     {id: '1', title: 'Tayota Rav 4', price: 100, description: 'Идеально подходит для города, путешествий и горной местности'},
     {id: '2', title: 'Volkswagen ЖУК', price: 50, description: 'Идеально подходит для съемок и мероприятий'},
-    {id: '3', title: 'Dodje Chardger', price: 110, description: 'Для города и съемок'},
+    {id: '3', title: 'Dodje Chardger', price: 110, description: 'Идеально подъодит для города и съемок, езды за городом'},
 ]
 
 const getTotalPrice = (item = []) => {
