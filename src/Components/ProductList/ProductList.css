@@ -3,8 +3,53 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.product-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
 .item {
     margin-right: 10px;
     margin-bottom: 10px;
+}
+.sorting-select, .filter-select {
+    margin-bottom: 20px;
+}
+
+.sorting-select select, .filter-select select {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.sorting-select select:focus, .filter-select select:focus {
+    border-color: #007bff;
+}
+
+.filter-container {
+    display: flex;
+    overflow-x: auto;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.filter i {
+    font-size: 24px;
+    margin-bottom: 5px;
 }

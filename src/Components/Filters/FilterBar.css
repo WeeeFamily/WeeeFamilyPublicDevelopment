@@ -1,0 +1,48 @@
+.filter-container {
+    display: flex;
+    overflow-x: auto;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.filter select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter select:focus {
+    border-color: #007bff;
+}
+
+.filter i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.filter span {
+    font-size: 14px;
+    text-align: center;
+}
