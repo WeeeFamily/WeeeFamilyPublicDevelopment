@@ -84,7 +84,7 @@ input[type="date"] {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-    .input-group .select {
+    .input-group .select .input-group input[type="date"]{
         -webkit-appearance: none; /* Убираем стандартный стиль для iOS */
         padding-left: 40px; /* Отступ слева для иконки */
     }
