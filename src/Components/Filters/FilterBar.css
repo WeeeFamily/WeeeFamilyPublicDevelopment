@@ -34,6 +34,10 @@
     cursor: pointer;
     transition: border-color 0.3s ease;
     margin-top: 5px; /* Adjust spacing between icon and select */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+        -webkit-appearance: none; /* Убираем стандартный стиль для iOS */
+        padding-left: 2px; /* Отступ слева для иконки */
+    }
 }
 
 .filter select:focus {
@@ -46,6 +50,7 @@
 }
 
 .filter span {
-    font-size: 14px;
+    font-size: 16px;
+    padding-top: 8px;
     text-align: center;
 }
