@@ -10,16 +10,15 @@ const products = [
     { id: '3', title: 'Dodge Charger', price: 110, description: 'Идеально подходит для города и съемок, езды за городом', img: '/PhotoCars/dodge-charger.jpg', brand: 'Dodge', class: 'Sedan', partner: 'Partner 1' },
 ];
 
-
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState(products);
     const { tg } = useTelegram();
 
-
-     const sortProducts = (order, type) => {
-        const sorted = [...filteredProducts].sort((a, b) => {
+    const sortProducts = (order, type) => {
+        const sorted = [...products].sort((a, b) => {
             if (type === 'price') {
+                // Сортировка по цене
                 if (order === 'asc') {
                     return a.price - b.price;
                 } else if (order === 'desc') {
@@ -43,7 +42,6 @@ const ProductList = () => {
         setFilteredProducts(sorted);
     }
 
-
     const handleFilterChange = (type, value) => {
         if (type === 'all') {
             setFilteredProducts(products);
@@ -51,7 +49,7 @@ const ProductList = () => {
             const filtered = products.filter(product => product.partner === value);
             setFilteredProducts(filtered);
         } else if (type === 'price') {
-            const [order] = value.split('_');
+            const order = value; // значение value уже содержит порядок сортировки ('asc' или 'desc')
             sortProducts(order, 'price');
         } else if (type === 'class') {
             const filtered = products.filter(product => product.class === value);
@@ -61,7 +59,8 @@ const ProductList = () => {
             setFilteredProducts(filtered);
         }
     }
-return (
+
+    return (
         <div className={'product-list'}>
             <FilterBar onFilterChange={handleFilterChange} />
             <div className={'list'}>
@@ -69,7 +68,6 @@ return (
                     <ProductItem
                         key={item.id}
                         product={item}
-
                         className={'item'}
                     />
                 ))}
@@ -79,4 +77,3 @@ return (
 };
 
 export default ProductList;
-
