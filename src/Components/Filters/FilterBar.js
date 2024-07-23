@@ -23,8 +23,8 @@ const FilterBar = ({ onFilterChange }) => {
                 <i className="fas fa-dollar-sign"></i>
                 <select onChange={(e) => onFilterChange('price', e.target.value)}>
                     <option value="">По цене</option>
-                    <option value="price_asc">От низкой к высокой</option>
-                    <option value="price_desc">От высокой к низкой</option>
+                    <option value="asc">От низкой к высокой</option>
+                    <option value="desc">От высокой к низкой</option>
                 </select>
 
             </div>

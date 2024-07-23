@@ -16,26 +16,14 @@ const ProductList = () => {
     const { tg } = useTelegram();
 
     const sortProducts = (order, type) => {
-        const sorted = [...products].sort((a, b) => {
+
+        const sorted = [...filteredProducts].sort((a, b) => {
             if (type === 'price') {
-                // Сортировка по цене
-                if (order === 'asc') {
-                    return a.price - b.price;
-                } else if (order === 'desc') {
-                    return b.price - a.price;
-                }
+                return order === 'asc' ? a.price - b.price : b.price - a.price;
             } else if (type === 'brand') {
-                if (order === 'asc') {
-                    return a.brand.localeCompare(b.brand);
-                } else if (order === 'desc') {
-                    return b.brand.localeCompare(a.brand);
-                }
+                return order === 'asc' ? a.brand.localeCompare(b.brand) : b.brand.localeCompare(a.brand);
             } else if (type === 'class') {
-                if (order === 'asc') {
-                    return a.class.localeCompare(b.class);
-                } else if (order === 'desc') {
-                    return b.class.localeCompare(a.class);
-                }
+                return order === 'asc' ? a.class.localeCompare(b.class) : b.class.localeCompare(a.class);
             }
             return 0;
         });
@@ -43,6 +31,7 @@ const ProductList = () => {
     }
 
     const handleFilterChange = (type, value) => {
+
         if (type === 'all') {
             setFilteredProducts(products);
         } else if (type === 'partner') {
@@ -50,6 +39,7 @@ const ProductList = () => {
             setFilteredProducts(filtered);
         } else if (type === 'price') {
             const order = value; // значение value уже содержит порядок сортировки ('asc' или 'desc')
+            console.log(`Sorting products by price in ${order} order`);
             sortProducts(order, 'price');
         } else if (type === 'class') {
             const filtered = products.filter(product => product.class === value);
