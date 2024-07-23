@@ -37,7 +37,7 @@
 }
 
 .filter select:focus {
-    border-color: #007bff;
+    /*border-color: #007bff;*/
 }
 
 .filter i {
