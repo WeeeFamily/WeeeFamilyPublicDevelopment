@@ -32,8 +32,9 @@
      width: 100%; /* Ensures full width */
 }
 
-.sorting-select select:focus, .filter-select select:focus {
-    border-color: #007bff;
+.sorting-select select:focus, .filter-select select:focus
+{
+    /*border-color: #007bff;*/
 }
 
 .filter-container {
