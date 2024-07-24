@@ -15,7 +15,7 @@ const products = [
 
 const banners = [
 
-    { id: '2', video: '/banners/adventure_Georgia_1.mp4', text: 'Special Offer 2' },
+    { id: '2', video: '/banners/adventure_Georgia_1.mp4', poster: '/banners/111.jpg', text: 'Special Offer 2' },
 
 ];
 
