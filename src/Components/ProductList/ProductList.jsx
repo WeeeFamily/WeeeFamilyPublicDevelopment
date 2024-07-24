@@ -93,7 +93,6 @@ const ProductList = () => {
             <div className="banner-slider">
                 <Slider {...sliderSettings}> {banners.map(banner => (
                         <div key={banner.id} className="video-container">
-
                             <video src={banner.video} className="banner-video" autoPlay muted loop playsInline  />
                             <div className="banner-text"></div>
                         </div>
