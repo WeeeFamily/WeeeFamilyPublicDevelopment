@@ -57,6 +57,11 @@
     height: 100vh; /* Занимает всю высоту экрана */
     text-align: center; /* Выравнивание текста по центру */
 }
+.telegram-sticker {
+    margin-top: 20px;
+    width: 150px; /* Установите желаемую ширину для стикера */
+    height: auto; /* Сохраняем пропорции */
+}
 
 .return_button {
     background-color: #007bff;
@@ -101,4 +106,5 @@ input[type="date"] {
         -webkit-appearance: none; /* Убираем стандартный стиль для iOS */
         padding-left: 40px; /* Отступ слева для иконки */
     }
+
 }
