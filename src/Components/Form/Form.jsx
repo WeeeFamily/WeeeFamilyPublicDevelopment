@@ -160,6 +160,11 @@ const Form = () => {
                  <div className="thank-you">
                      <h2>Спасибо за заявку!</h2>
                      <Button onClick={handleGoBack}>Посмотреть другие авто</Button>
+                     <img
+                         src="https://t.me/c/2135710194/159"
+                         alt="Telegram Sticker"
+                         className="telegram-sticker"
+                     /> {/* Добавляем стикер */}
                  </div>
              )}
         </div>
