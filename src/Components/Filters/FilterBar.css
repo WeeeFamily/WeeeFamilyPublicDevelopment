@@ -33,6 +33,10 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     cursor: pointer;
+    -webkit-appearance: none; /* Убирает стандартный стиль на iOS */
+    -moz-appearance: none;    /* Убирает стандартный стиль на Firefox */
+    appearance: none;
+    color: black;
     transition: border-color 0.3s ease;
     margin-top: 5px; /* Adjust spacing between icon and select */
     @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
