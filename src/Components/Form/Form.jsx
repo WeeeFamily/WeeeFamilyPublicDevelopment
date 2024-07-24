@@ -96,7 +96,7 @@ const Form = () => {
                      <h2 className="h2">Fill out the form to Rent Car 👇</h2>
                      <div className="dog_sticker">
                          <img
-                             src="/banners/dog.gif"
+                             src="/banners/dogg.gif"
                              alt="Telegram Sticker"
                              className="telegram-sticker1"
                          /> {/* Добавляем стикер */}
