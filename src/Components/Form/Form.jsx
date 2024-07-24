@@ -94,6 +94,13 @@ const Form = () => {
              {!isSubmitted ? (
                  <>
                      <h2 className="h2">Fill out the form to Rent Car 👇</h2>
+                     <div className="dog_sticker">
+                         <img
+                             src="/banners/dog.gif"
+                             alt="Telegram Sticker"
+                             className="telegram-sticker1"
+                         /> {/* Добавляем стикер */}
+                     </div>
 
                      <div className="input-group">
                          <input
@@ -156,6 +163,7 @@ const Form = () => {
                          />
                          <i className="fas fa-phone"></i>
                      </div>
+
 
                  </>
              ) : (
