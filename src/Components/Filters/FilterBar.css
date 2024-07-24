@@ -1,5 +1,5 @@
 .filter-container {
-    display: flex;
+   display: flex;
     overflow-x: auto;
     background-color: white;
     margin-bottom: 10px;
