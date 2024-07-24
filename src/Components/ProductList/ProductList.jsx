@@ -14,9 +14,9 @@ const products = [
 ];
 
 const banners = [
-    { id: '1', video: '/banners/video-banner-1.mp4', text: 'Special Offer 1' },
+
     { id: '2', video: '/banners/video-banner-2.mp4', text: 'Special Offer 2' },
-    { id: '3', video: '/banners/video-banner-3.mp4', text: 'Special Offer 3' },
+
 ];
 
 const ProductList = () => {
@@ -55,23 +55,46 @@ const ProductList = () => {
     }
 
     const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 7000
-    };
+    dots: false,
+    infinite: false, // Отключаем бесконечное прокручивание
+    speed: 500,
+    slidesToShow: 1, // Количество слайдов, отображаемых за раз
+    slidesToScroll: 1, // Количество слайдов, прокручиваемых за раз// Показываем стрелки для навигации
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 0
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
 
     return (
         <div className={'product-list'}>
             <div className="banner-slider">
-                <Slider {...sliderSettings}>
-                    {banners.map(banner => (
+                <Slider {...sliderSettings}> {banners.map(banner => (
                         <div key={banner.id} className="video-container">
                             <video src={banner.video} className="banner-video" autoPlay muted loop />
-                            <div className="banner-text">{banner.text}</div>
+                            <div className="banner-text"></div>
                         </div>
                     ))}
                 </Slider>

@@ -1,32 +1,42 @@
 .product-list {
     display: flex;
     flex-direction: column;
-    max-width: 100%; /* Ensures the content doesn't overflow */
+    max-width: 100%;
     margin: 20px;
-    padding: 0; /* Убираем отступы */
+    padding: 0;
+}
+.slick-list {
+    overflow: hidden; /* Скрывает элементы, выходящие за пределы видимой области */
+}
+
+.slick-track {
+    display: flex; /* Слайды выстраиваются в строку */
 }
 
 .banner-slider {
+
     width: 100%;
-    margin-bottom: 0; /* Убираем нижний отступ */
+    margin-bottom: 0;
     position: relative;
 }
 
 .video-container {
     position: relative;
     width: 100%;
-    height: 300px; /* Fixed height for the container */
-    overflow: hidden; /* Clips the video to fit the container */
+    height: 0;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    overflow: hidden;
+     /* Ограничение максимальной ширины */
 }
 
 .banner-video {
+
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover; /* Scale and crop the video to fill the container */
+    height: 100%;
+    object-fit: cover;
 }
 
 .banner-text {
@@ -43,7 +53,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%; /* Ensures full width */
+    width: 100%;
 }
 
 .item {
@@ -53,7 +63,7 @@
 
 .sorting-select, .filter-select {
     margin-bottom: 20px;
-    width: 100%; /* Ensures full width */
+    width: 100%;
 }
 
 .sorting-select select, .filter-select select {
@@ -63,7 +73,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: border-color 0.3s ease;
-    width: 100%; /* Ensures full width */
+    width: 100%;
 }
 
 .sorting-select select:focus, .filter-select select:focus {
@@ -74,6 +84,7 @@
     display: flex;
     overflow-x: auto;
     background-color: white;
+
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
