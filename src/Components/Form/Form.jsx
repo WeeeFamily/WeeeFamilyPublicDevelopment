@@ -117,14 +117,15 @@ const Form = () => {
                      <div className="input-group">
                          <input
                              className={'input'}
-                             type="text"
-                             placeholder={'Your Name'}
-                             value={name}
-                             onChange={onChangeName}
+                             type='date'
+                             placeholder={'Дата начала аренды'}
+                             value={date}
+                             onChange={onChangeDate}
                              required
                          />
-                         <i className="fas fa-user"></i>
+                         <i className="fas fa-calendar-alt"></i>
                      </div>
+
                      <div className="input-group">
                          <select value={take} onChange={onChangeTake} className={'select'}>
                              <option value={'value'}>How to pick up the car?</option>
@@ -132,6 +133,17 @@ const Form = () => {
                              <option value={'Office'}>Pick up at the office</option>
                          </select>
                          <i className="fas fa-car"></i>
+                     </div>
+                     <div className="input-group">
+                         <input
+                             className={'input'}
+                             type="text"
+                             placeholder={'Your Name'}
+                             value={name}
+                             onChange={onChangeName}
+                             required
+                         />
+                         <i className="fas fa-user"></i>
                      </div>
                      <div className="input-group">
                          <input
@@ -144,22 +156,12 @@ const Form = () => {
                          />
                          <i className="fas fa-phone"></i>
                      </div>
-                     <div className="input-group">
-                         <input
-                             className={'input'}
-                             type='date'
-                             placeholder={'Дата начала аренды'}
-                             value={date}
-                             onChange={onChangeDate}
-                             required
-                         />
-                         <i className="fas fa-calendar-alt"></i>
-                     </div>
+
                  </>
              ) : (
                  <div className="thank-you">
                      <h2>Thank you for your apply!</h2>
-                       <img
+                     <img
                          src="/banners/stick-ezgif.com-resize.gif"
                          alt="Telegram Sticker"
                          className="telegram-sticker"
