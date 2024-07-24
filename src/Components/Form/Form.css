@@ -51,9 +51,10 @@
 }
 .thank-you {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 20px;
     height: 100vh; /* Занимает всю высоту экрана */
     text-align: center; /* Выравнивание текста по центру */
 }

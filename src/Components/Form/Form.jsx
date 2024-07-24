@@ -158,13 +158,14 @@ const Form = () => {
                  </>
              ) : (
                  <div className="thank-you">
-                     <h2>Спасибо за заявку!</h2>
-                     <Button onClick={handleGoBack}>Посмотреть другие авто</Button>
-                     <img
+                     <h2>Thank you for your apply!</h2>
+                       <img
                          src="/banners/stick-ezgif.com-resize.gif"
                          alt="Telegram Sticker"
                          className="telegram-sticker"
                      /> {/* Добавляем стикер */}
+                     <Button onClick={handleGoBack}>View other cars</Button>
+
                  </div>
              )}
         </div>
