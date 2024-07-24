@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './ProductList.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../hooks/useTelegram";
 import FilterBar from "../Filters/FilterBar";
@@ -10,13 +13,17 @@ const products = [
     { id: '3', title: 'Dodge Charger', price: 110, description: 'Ideal for the city and filming, driving outside the city.', img: '/PhotoCars/dodge-charger.jpg', brand: 'Dodge', class: 'Sedan', partner: 'Partner 1' },
 ];
 
+const banners = [
+    { id: '1', video: '/banners/video-banner-1.mp4', text: 'Special Offer 1' },
+    { id: '2', video: '/banners/video-banner-2.mp4', text: 'Special Offer 2' },
+    { id: '3', video: '/banners/video-banner-3.mp4', text: 'Special Offer 3' },
+];
+
 const ProductList = () => {
-    const [addedItems, setAddedItems] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState(products);
     const { tg } = useTelegram();
 
     const sortProducts = (order, type) => {
-
         const sorted = [...filteredProducts].sort((a, b) => {
             if (type === 'price') {
                 return order === 'asc' ? a.price - b.price : b.price - a.price;
@@ -31,16 +38,13 @@ const ProductList = () => {
     }
 
     const handleFilterChange = (type, value) => {
-
         if (type === 'all') {
             setFilteredProducts(products);
         } else if (type === 'partner') {
             const filtered = products.filter(product => product.partner === value);
             setFilteredProducts(filtered);
         } else if (type === 'price') {
-            const order = value; // значение value уже содержит порядок сортировки ('asc' или 'desc')
-            console.log(`Sorting products by price in ${order} order`);
-            sortProducts(order, 'price');
+            sortProducts(value, 'price'); // значение value уже содержит порядок сортировки ('asc' или 'desc')
         } else if (type === 'class') {
             const filtered = products.filter(product => product.class === value);
             setFilteredProducts(filtered);
@@ -50,8 +54,28 @@ const ProductList = () => {
         }
     }
 
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 7000
+    };
+
     return (
         <div className={'product-list'}>
+            <div className="banner-slider">
+                <Slider {...sliderSettings}>
+                    {banners.map(banner => (
+                        <div key={banner.id} className="video-container">
+                            <video src={banner.video} className="banner-video" autoPlay muted loop />
+                            <div className="banner-text">{banner.text}</div>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
             <FilterBar onFilterChange={handleFilterChange} />
             <div className={'list'}>
                 {filteredProducts.map(item => (
