@@ -161,7 +161,7 @@ const Form = () => {
                      <h2>Спасибо за заявку!</h2>
                      <Button onClick={handleGoBack}>Посмотреть другие авто</Button>
                      <img
-                         src="https://t.me/c/2135710194/159"
+                         src="/banners/stick-ezgif.com-resize.gif"
                          alt="Telegram Sticker"
                          className="telegram-sticker"
                      /> {/* Добавляем стикер */}
