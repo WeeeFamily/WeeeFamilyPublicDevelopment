@@ -49,6 +49,14 @@
     appearance: none;
     color: black;
 }
+.thank-you {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+    text-align: center; /* Выравнивание текста по центру */
+}
 
 .return_button {
     background-color: #007bff;

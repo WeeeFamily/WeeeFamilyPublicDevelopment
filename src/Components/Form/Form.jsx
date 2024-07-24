@@ -38,6 +38,7 @@ const Form = () => {
         .then(response => {
             console.log('Message sent successfully:', response);
             setIsSubmitted(true);
+            tg.MainButton.hide();
         })
         .catch(error => {
             console.error('Error sending message:', error);
