@@ -85,7 +85,7 @@ const Form = () => {
     };
 
     const handleGoBack = () => {
-        navigate('/ProductList');
+        navigate('/');
     };
 
     return (
