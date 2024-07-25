@@ -38,11 +38,11 @@
     font-size: 10px;
 }
 .nav-button.active {
-    color: #0088cc; /* Цвет текста и иконки */
+    color: #007bff; /* Цвет текста и иконки */
 }
 
 .nav-button.active i {
-    color: #0088cc; /* Цвет иконки */
+    color: #007bff; /* Цвет иконки */
 }
 
 /* Мобильные устройства (до 600px) */

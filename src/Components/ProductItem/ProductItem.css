@@ -3,7 +3,7 @@
     padding: 10px 20px;
     margin-left: auto;
     border: none; /* Убрать границу */
-    border-radius: 5px; /* Закругленные углы */
+    border-radius: 6px; /* Закругленные углы */
     background-color: #007bff; /* Фоновый цвет */
     color: #fff; /* Цвет текста */
     font-size: 16px; /* Размер шрифта */
@@ -95,7 +95,7 @@
 }
 
 .price span b {
-    color: #007bff; /* Цвет выделенной цены */
+    color: #555555; /* Цвет выделенной цены */
 }
 
 
