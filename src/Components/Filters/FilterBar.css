@@ -66,3 +66,9 @@
     padding-top: 8px;
     text-align: center;
 }
+.filter.active i,
+.filter.active span,
+.filter.active select {
+    color: #007bff; /* Синий цвет для активного элемента */
+    border-color: #007bff; /* Синий цвет для границы select */
+}
