@@ -6,6 +6,9 @@ import Slider from "react-slick";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../hooks/useTelegram";
 import FilterBar from "../Filters/FilterBar";
+// import '../menuForNavigation/menuBar.css';
+import XBar from "../menuForNavigation/menuBar";
+import NavBar from '../NavBar/NavBar';
 
 const products = [
     { id: '1', title: 'Toyota Rav 4', price: 100, description: 'Ideal for city, travel and mountainous areas.', img: '/PhotoCars/toyota-rav4.jpg', brand: 'Toyota', class: 'SUV', partner: 'Partner 2' },
@@ -90,6 +93,7 @@ const ProductList = () => {
 
     return (
         <div className={'product-list'}>
+
             <div className="banner-slider">
                 <Slider {...sliderSettings}> {banners.map(banner => (
                         <div key={banner.id} className="video-container">
@@ -113,6 +117,8 @@ const ProductList = () => {
                     />
                 ))}
             </div>
+             <NavBar />
+
         </div>
     );
 };
