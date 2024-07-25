@@ -43,7 +43,7 @@
 }
 
 .item {
-margin-right: 5px;
+
     margin-bottom: 10px;
 }
 
@@ -57,7 +57,7 @@ margin-right: 5px;
 .product-list {
     /*overflow-x: hidden; !* Отключаем горизонтальный скроллинг *!*/
     box-sizing: border-box; /* Учитываем бордеры и паддинги в ширине */
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 /* Баннер и другие медиа элементы */

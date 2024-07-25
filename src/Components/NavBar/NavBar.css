@@ -2,14 +2,18 @@
 .nav-bar {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 20px);
     display: flex;
+
     justify-content: space-around;
     background-color: #fff;
     border-top: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 10px;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
+    border-radius: 10px;
+
+
 
 }
 
@@ -20,18 +24,18 @@
     justify-content: center;
     border: none;
     background: none;
-    font-size: 14px;
+    font-size: 10px;
     color: #333;
     cursor: pointer;
 }
 
 .nav-button i {
-    font-size: 24px;
-    margin-bottom: 4px;
+    font-size: 20px;
+    margin-bottom: 3px;
 }
 
 .nav-button span {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 /* Мобильные устройства (до 600px) */
@@ -52,11 +56,11 @@
     }
 
     .nav-button i {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .nav-button span {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -64,18 +68,18 @@
 @media (min-width: 1025px) {
     .nav-bar {
         justify-content: space-evenly;
-        padding-right: 50px;
+       padding: 10px 20px;
     }
 
     .nav-button {
-        margin-right: 20px;
+        margin-right: 0;
     }
 
     .nav-button i {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .nav-button span {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
