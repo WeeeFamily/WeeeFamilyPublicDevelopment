@@ -2,16 +2,16 @@
 .nav-bar {
     position: fixed;
     bottom: 0;
-    width: calc(100% - 20px);
+    width: 100%;
     display: flex;
-
     justify-content: space-around;
     background-color: #fff;
     border-top: 1px solid #ddd;
     padding: 10px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
     z-index: 1000;
-    border-radius: 10px;
+    left: 0;
+    right: 0;
 
 
 
@@ -36,6 +36,13 @@
 
 .nav-button span {
     font-size: 10px;
+}
+.nav-button.active {
+    color: #0088cc; /* Цвет текста и иконки */
+}
+
+.nav-button.active i {
+    color: #0088cc; /* Цвет иконки */
 }
 
 /* Мобильные устройства (до 600px) */

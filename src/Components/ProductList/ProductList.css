@@ -57,7 +57,7 @@
 .product-list {
     /*overflow-x: hidden; !* Отключаем горизонтальный скроллинг *!*/
     box-sizing: border-box; /* Учитываем бордеры и паддинги в ширине */
-    padding-bottom: 50px;
+    padding-bottom: 63px;
 }
 
 /* Баннер и другие медиа элементы */
