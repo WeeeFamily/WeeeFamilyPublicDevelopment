@@ -1,3 +1,4 @@
+/* Общие стили для всех устройств */
 .nav-bar {
     position: fixed;
     bottom: 0;
@@ -29,4 +30,50 @@
 
 .nav-button span {
     font-size: 12px;
+}
+
+/* Мобильные устройства (до 600px) */
+@media (max-width: 600px) {
+    .nav-bar {
+        justify-content: space-evenly;
+    }
+
+    .nav-button {
+        flex: 1;
+    }
+}
+
+/* Планшеты и более крупные устройства (до 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .nav-bar {
+        justify-content: space-evenly;
+    }
+
+    .nav-button i {
+        font-size: 28px;
+    }
+
+    .nav-button span {
+        font-size: 14px;
+    }
+}
+
+/* Десктопные устройства (более 1024px) */
+@media (min-width: 1025px) {
+    .nav-bar {
+        justify-content: flex-end;
+        padding-right: 50px;
+    }
+
+    .nav-button {
+        margin-right: 20px;
+    }
+
+    .nav-button i {
+        font-size: 32px;
+    }
+
+    .nav-button span {
+        font-size: 16px;
+    }
 }
