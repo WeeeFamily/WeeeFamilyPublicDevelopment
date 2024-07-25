@@ -53,3 +53,27 @@ margin-right: 5px;
 
 
 
+/* Основной контейнер страницы */
+.product-list {
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    /*overflow-x: hidden; !* Отключаем горизонтальный скроллинг *!*/
+    box-sizing: border-box; /* Учитываем бордеры и паддинги в ширине */
+}
+
+/* Баннер и другие медиа элементы */
+.banner-slider,
+.video-container,
+.banner-video {
+    max-width: 100%; /* Ограничиваем ширину */
+    overflow: hidden; /* Отключаем переполнение */
+    box-sizing: border-box;
+}
+
+/* Убедитесь, что все элементы, которые могут выходить за пределы экрана, ограничены по ширине */
+.list,
+.item,
+.nav-bar,
+.nav-button {
+    max-width: 100%;
+    box-sizing: border-box;
+}

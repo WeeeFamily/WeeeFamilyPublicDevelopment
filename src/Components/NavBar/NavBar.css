@@ -61,7 +61,7 @@
 /* Десктопные устройства (более 1024px) */
 @media (min-width: 1025px) {
     .nav-bar {
-        justify-content: flex-end;
+        justify-content: space-evenly;
         padding-right: 50px;
     }
 
