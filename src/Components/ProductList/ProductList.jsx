@@ -6,8 +6,6 @@ import Slider from "react-slick";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../hooks/useTelegram";
 import FilterBar from "../Filters/FilterBar";
-// import '../menuForNavigation/menuBar.css';
-import XBar from "../menuForNavigation/menuBar";
 import NavBar from '../NavBar/NavBar';
 
 const products = [
