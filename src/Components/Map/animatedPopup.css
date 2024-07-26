@@ -1,0 +1,82 @@
+.custom-marker {
+    background-size: cover;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.marker-label {
+    position: absolute;
+    bottom: -20px; /* Расстояние от маркера до текста */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-top:10px;
+    white-space: nowrap;
+    pointer-events: none; /* Текст не будет мешать кликам на маркер */
+}
+.popup-content {
+    text-align: center;
+   /* Ширина попапа */
+}
+
+.popup-content h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.popup-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/*.mapboxgl-popup-content {*/
+/*    padding: 0; !* Убираем внутренние отступы *!*/
+/*    width: 150px; !* Устанавливаем ширину *!*/
+/*    height: 150px; !* Устанавливаем высоту *!*/
+
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+.mapboxgl-popup-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохраняем соотношение сторон */
+    /* Круглое изображение */
+}
+.mapboxgl-popup-tip {
+    display: none; /* Убираем стрелочку попапа */
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    width: 150px;
+     /* Ширина попапа */
+    animation: popupOpen 0.3s forwards; /* Анимация открытия */
+    background: white; /* Фон попапа */
+    border-radius: 10px; /* Радиус углов попапа */
+    padding: 0;
+
+
+}
+
+.animated-popup .mapboxgl-popup-content {
+    animation: popupOpen 0.3s forwards;
+}
+
+@keyframes popupOpen {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
