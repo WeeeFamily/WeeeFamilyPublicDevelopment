@@ -115,7 +115,7 @@ const ProductList = () => {
                     />
                 ))}
             </div>
-             <NavBar />
+
 
         </div>
     );

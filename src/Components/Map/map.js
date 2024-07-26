@@ -1,11 +1,10 @@
-// import React, { useRef, useEffect } from 'react';
-// // import mapboxgl from 'mapbox-gl';
-// // import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-// import 'mapbox-gl/dist/mapbox-gl.css';
-// import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-// import icon from '../img/point.svg';
-// import '../Map/map.css';
-
+import React, { useRef, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import './map.css';
+import icon from '../img/Point.svg'
 const Map = () => {
     const mapContainerRef = useRef(null);
     const markerRef = useRef(null);
@@ -13,12 +12,12 @@ const Map = () => {
     const mapRef = useRef(null);
 
     useEffect(() => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGlub3dheTIwMjMiLCJhIjoiY2xzMGtxMHNyMDFzaDJycXA1eHd4aHFlciJ9.MQNTRD7JBr9SEafwksOHUg';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2VlZWZhbWlseSIsImEiOiJjbHlwd3VxcHEwZnNkMmtzZ2UzZ2I4NTFpIn0.QG4FgBUfdah0c6Ed4iJkog';
 
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
-            style: 'mapbox://styles/dinoway2023/cls0mmiu600zm01r45jkx6az6/draft',
-            center: [44.799885, 41.695272],
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [41.649885, 41.645272],
             zoom: 10,
         });
 
@@ -29,7 +28,7 @@ const Map = () => {
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl,
             placeholder: 'Search for a location...',
-            marker: false,
+            marker: true,
         });
 
         geocoderContainerRef.current.appendChild(geocoder.onAdd(map));
