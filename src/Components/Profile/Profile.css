@@ -1,60 +1,33 @@
 .profile-container {
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    text-align: center;
 }
 
 .profile-avatar {
-    position: relative;
+    width: 150px; /* Можно изменить размер по вашему желанию */
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%; /* Сделать аватар круглым */
     margin-bottom: 20px;
 }
 
 .profile-avatar img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile-avatar input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    cursor: pointer;
+    object-fit: cover; /* Изображение будет масштабироваться и обрезаться, чтобы заполнить контейнер */
 }
 
 .profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
-.profile-info h2, .profile-info p {
+.profile-info h2 {
     margin: 10px 0;
 }
 
-.profile-info input, .profile-info textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.profile-info button {
-    margin: 10px 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-}
-
-.profile-info button:hover {
-    background-color: #0056b3;
+.profile-info p {
+    margin: 5px 0;
+    color: #666;
 }
