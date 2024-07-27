@@ -24,6 +24,16 @@ const Profile = () => {
         }
     }, []);
 
+    // Функция для изменения данных пользователя
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUser(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    // Функция для загрузки нового аватара
     const handleAvatarChange = (e) => {
         if (e.target.files && e.target.files[0]) {
             const reader = new FileReader();
@@ -36,6 +46,14 @@ const Profile = () => {
             reader.readAsDataURL(e.target.files[0]);
         }
     };
+
+    // Функция для сохранения данных профиля
+    const saveProfile = () => {
+        // Здесь можно отправить обновленные данные на сервер
+        console.log('Profile saved:', user);
+        setIsEditing(false);
+    };
+
 
     return (
         <div className="profile-container">
