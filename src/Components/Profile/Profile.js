@@ -5,7 +5,7 @@ const Profile = () => {
     const [user, setUser] = useState({
         name: '',
         username: '',
-        avatar: 'https://via.placeholder.com/150', // Дефолтная фотография
+        avatar: '/public/User/newUserPhoto1.jpg', // Дефолтная фотография
     });
     const [isEditing, setIsEditing] = useState(false);
 
