@@ -12,7 +12,7 @@ const Profile = () => {
     });
     const [isEditing, setIsEditing] = useState(false);
 
-    useEffect(() => {
+   useEffect(() => {
         if (window.Telegram.WebApp) {
             const tg = window.Telegram.WebApp;
             const userData = tg.initDataUnsafe.user;
@@ -102,12 +102,6 @@ const Profile = () => {
                             onChange={handleChange}
                             placeholder="Add a bio"
                         />
-                        <textarea
-                            name="description"
-                            value={user.description}
-                            onChange={handleChange}
-                            placeholder="Add a description"
-                        />
                         <button onClick={saveProfile}>
                             Save Changes
                         </button>
@@ -119,7 +113,6 @@ const Profile = () => {
                     <>
                         <h2>{user.firstName} {user.lastName}</h2>
                         <p>{user.username}</p>
-                        <p>{user.description}</p>
                         <p>{user.phoneNumber}</p>
                         <p>{user.bio}</p>
                         <button onClick={() => setIsEditing(true)}>
