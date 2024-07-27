@@ -1,10 +1,20 @@
+/* Удалены стили, связанные с контейнером */
 .profile-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Стили для заголовка */
+.profile-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для аватара пользователя */
 .profile-avatar {
     position: relative;
     margin-bottom: 20px;
@@ -15,46 +25,68 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для инпута загрузки файла */
 .profile-avatar input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px;
 }
 
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Стили для информации о профиле */
+.profile-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff;
 }
 
-.profile-info h2, .profile-info p {
-    margin: 10px 0;
+.profile-info p {
+    margin: 5px 0;
+    color: #666;
 }
 
-.profile-info input, .profile-info textarea {
+/* Стили для полей ввода в режиме редактирования */
+.profile-info input[type="text"],
+.profile-info textarea {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
+/* Стили для кнопок */
 .profile-info button {
-    margin: 10px 5px;
     padding: 10px 20px;
+    margin: 5px;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Основные стили кнопок */
+.profile-info button:first-of-type {
     background-color: #007bff;
     color: white;
 }
 
+.profile-info button:last-of-type {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Ховеры на кнопках */
 .profile-info button:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
+}
+
+.profile-info button:last-of-type:hover {
+    background-color: #007bff;
 }
