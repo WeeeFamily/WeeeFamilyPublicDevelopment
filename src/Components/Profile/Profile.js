@@ -6,6 +6,9 @@ const Profile = () => {
         name: '',
         username: '',
         avatar: '/User/newUserPhoto1.jpg', // Исправленный путь к дефолтной фотографии
+        phoneNumber: '',
+        bio: '',
+
     });
     const [isEditing, setIsEditing] = useState(false);
 
@@ -20,6 +23,8 @@ const Profile = () => {
                     lastName: userData.last_name || '',
                     username: userData.username ? `@${userData.username}` : '',
                     avatar: userData.photo_url || prevState.avatar,
+                    phoneNumber: userData.phone_number || '', // Предполагаем, что phone_number есть в данных пользователя
+                    bio: userData.bio || '', // Предполагаем, что bio есть в данных пользователя
                 }));
             }
         }
@@ -84,6 +89,19 @@ const Profile = () => {
                             onChange={handleChange}
                             placeholder="Last Name"
                         />
+                        <input
+                            type="text"
+                            name="phoneNumber"
+                            value={user.phoneNumber}
+                            onChange={handleChange}
+                            placeholder="Phone Number"
+                        />
+                        <textarea
+                            name="bio"
+                            value={user.bio}
+                            onChange={handleChange}
+                            placeholder="Add a bio"
+                        />
                         <textarea
                             name="description"
                             value={user.description}
@@ -102,6 +120,8 @@ const Profile = () => {
                         <h2>{user.firstName} {user.lastName}</h2>
                         <p>{user.username}</p>
                         <p>{user.description}</p>
+                        <p>{user.phoneNumber}</p>
+                        <p>{user.bio}</p>
                         <button onClick={() => setIsEditing(true)}>
                             Edit Profile
                         </button>
