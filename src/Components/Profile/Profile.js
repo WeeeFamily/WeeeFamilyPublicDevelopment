@@ -5,7 +5,7 @@ const Profile = () => {
     const [user, setUser] = useState({
         name: '',
         username: '',
-        avatar: '/public/User/newUserPhoto1.jpg', // Дефолтная фотография
+        avatar: '/User/newUserPhoto1.jpg', // Исправленный путь к дефолтной фотографии
     });
     const [isEditing, setIsEditing] = useState(false);
 
@@ -49,11 +49,9 @@ const Profile = () => {
 
     // Функция для сохранения данных профиля
     const saveProfile = () => {
-        // Здесь можно отправить обновленные данные на сервер
         console.log('Profile saved:', user);
         setIsEditing(false);
     };
-
 
     return (
         <div className="profile-container">
@@ -61,15 +59,20 @@ const Profile = () => {
             <div className="profile-avatar">
                 <img src={user.avatar} alt="Avatar" />
                 {isEditing && (
-                    <input type="file" onChange={handleAvatarChange} />
+                    <input type="file" accept="image/*" onChange={handleAvatarChange} />
                 )}
             </div>
             <div className="profile-info">
                 <h2>{user.name}</h2>
                 <p>{user.username}</p>
                 <button onClick={() => setIsEditing(!isEditing)}>
-                    {isEditing ? 'Cancel' : 'Edit Profile'}
+                    {isEditing ? 'Save' : 'Edit Profile'}
                 </button>
+                {isEditing && (
+                    <button onClick={saveProfile}>
+                        Save Changes
+                    </button>
+                )}
             </div>
         </div>
     );
