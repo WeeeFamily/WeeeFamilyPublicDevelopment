@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Profile.css';
 
 const Profile = () => {
-    // Начальные данные пользователя (можно загрузить из API)
     const [user, setUser] = useState({
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        bio: 'Web Developer',
-        avatar: 'https://via.placeholder.com/150'
+        name: '',
+        username: '',
+        avatar: '',
     });
     const [isEditing, setIsEditing] = useState(false);
 
-    // Функция для изменения данных пользователя
+    useEffect(() => {
+        // Проверка наличия Telegram Web Apps API
+        if (window.Telegram.WebApp) {
+            const tg = window.Telegram.WebApp;
+
+            // Получение данных пользователя
+            const userData = tg.initDataUnsafe.user;
+            if (userData) {
+                setUser({
+                    name: `${userData.first_name} ${userData.last_name || ''}`,
+                    username: userData.username ? `@${userData.username}` : '',
+                    avatar: userData.id ? `https://t.me/i/userpic/320/${userData.id}.jpg` : 'https://via.placeholder.com/150',
+                });
+            }
+        }
+    }, []);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUser(prevState => ({
@@ -20,7 +34,6 @@ const Profile = () => {
         }));
     };
 
-    // Функция для загрузки нового аватара
     const handleAvatarChange = (e) => {
         if (e.target.files && e.target.files[0]) {
             const reader = new FileReader();
@@ -34,9 +47,7 @@ const Profile = () => {
         }
     };
 
-    // Функция для сохранения данных профиля
     const saveProfile = () => {
-        // Здесь можно отправить обновленные данные на сервер
         console.log('Profile saved:', user);
         setIsEditing(false);
     };
@@ -59,14 +70,9 @@ const Profile = () => {
                         onChange={handleChange}
                     />
                     <input
-                        type="email"
-                        name="email"
-                        value={user.email}
-                        onChange={handleChange}
-                    />
-                    <textarea
-                        name="bio"
-                        value={user.bio}
+                        type="text"
+                        name="username"
+                        value={user.username}
                         onChange={handleChange}
                     />
                     <button onClick={saveProfile}>Save</button>
@@ -75,8 +81,7 @@ const Profile = () => {
             ) : (
                 <div className="profile-info">
                     <h2>{user.name}</h2>
-                    <p>{user.email}</p>
-                    <p>{user.bio}</p>
+                    <p>{user.username}</p>
                     <button onClick={() => setIsEditing(true)}>Edit Profile</button>
                 </div>
             )}
