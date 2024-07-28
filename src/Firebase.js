@@ -2,11 +2,16 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// import firebase from "firebase/compat/app";
+// import 'firebase/compat/auth';
+// import 'firebase/firestore';
+// import 'firebase/storage';
+// import 'firebase/compat/auth';
+// import 'firebase/compat/firestore';
+// import 'firebase/analytics'
+// import 'firebase/compat/storage';
+
 const firebaseConfig = {
   apiKey: "AIzaSyALmz_iK6vTBCsuyzjBkXJtrGaXqyBIOnc",
   authDomain: "weee-company.firebaseapp.com",
@@ -17,9 +22,9 @@ const firebaseConfig = {
   measurementId: "G-GCQLKKL67W"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-// Получение экземпляра Firestore и Auth
+
 const db = getFirestore(app);
 
-export { db};
+export {db};
