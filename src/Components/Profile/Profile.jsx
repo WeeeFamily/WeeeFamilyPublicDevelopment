@@ -5,36 +5,22 @@ import { db } from '../../firebase'
 
 const Profile = () => {
     const [user, setUser] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         username: '',
-        avatar: '/User/newUserPhoto1.jpg', // Исправленный путь к дефолтной фотографии
+        avatar: '/User/newUserPhoto1.jpg', // Дефолтная фотография
         phoneNumber: '',
         bio: '',
-
     });
     const [isEditing, setIsEditing] = useState(false);
-    const userId = 'uniqueUserId'; // Уникальный идентификатор пользователя
 
-   useEffect(() => {
-        if (window.Telegram.WebApp) {
-            const tg = window.Telegram.WebApp;
-            const userData = tg.initDataUnsafe.user;
-            if (userData) {
-                setUser(prevState => ({
-                    ...prevState,
-                    firstName: userData.first_name || '',
-                    lastName: userData.last_name || '',
-                    username: userData.username ? `@${userData.username}` : '',
-                    avatar: userData.photo_url || prevState.avatar,
-                    phoneNumber: userData.phone_number || '',
-                    bio: userData.bio || '',
-                }));
-            }
-        }
+    // Получение уникального идентификатора пользователя из аутентификации
+    const userId = 'uniqueUserId'; // Это должен быть реальный идентификатор пользователя
 
-        // Загрузка данных пользователя из Firestore
+    useEffect(() => {
+        // Функция для получения данных пользователя из Firestore
         const loadUserData = async () => {
-            const docRef = doc(db, 'users', userId);
+            const docRef = doc(db, 'profiles', userId);
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
@@ -70,8 +56,18 @@ const Profile = () => {
 
     const saveProfile = async () => {
         try {
-            await setDoc(doc(db, 'users', userId), user);
-            console.log('Profile saved:', user);
+            // Проверка данных перед сохранением
+            const profileData = {
+                firstName: user.firstName.trim(),
+                lastName: user.lastName.trim(),
+                username: user.username.trim(),
+                avatar: user.avatar,
+                phoneNumber: user.phoneNumber.trim(),
+                bio: user.bio.trim(),
+            };
+
+            await setDoc(doc(db, 'profiles', userId), profileData);
+            console.log('Profile saved:', profileData);
             setIsEditing(false);
         } catch (error) {
             console.error('Error saving profile:', error);
