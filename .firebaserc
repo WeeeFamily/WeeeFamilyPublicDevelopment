@@ -1,6 +1,7 @@
 {
   "projects": {
-    "y": "weee-company"
+    "y": "weee-company",
+    "default": "weee-company"
   },
   "targets": {},
   "etags": {},
