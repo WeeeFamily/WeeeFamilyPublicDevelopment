@@ -1,5 +1,5 @@
 import React from 'react';
-import {useTelegram} from "../hooks/useTelegram";
+import {useTelegram} from "../hooks/useTelegram.jsx";
 import './header.css';
 import Button from "../button/Button";
 import {useLocation, useNavigate} from "react-router-dom";

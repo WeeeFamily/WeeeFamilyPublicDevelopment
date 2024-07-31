@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Form.css';
-import { useTelegram } from "../hooks/useTelegram";
+import { useTelegram } from "../hooks/useTelegram.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios'; // Добавлен импорт Axios
 import Button from "../button/Button";
