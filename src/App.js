@@ -27,6 +27,7 @@ function App() {
               <Route path={'profile'} element={<Profile/>}/>
               <Route path={'map'} element={<Map/>}/>
               <Route path={'addCar'} element={<AddCar/>}/>
+
           </Routes>
 
 
