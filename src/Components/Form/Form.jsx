@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import firebaseReact, { useCallback, useEffect, useState } from 'react';
 import './Form.css';
 import { useTelegram } from "../hooks/useTelegram.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
