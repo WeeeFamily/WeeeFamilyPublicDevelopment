@@ -1,7 +1,7 @@
 // src/components/AddCar/AddCar.js
 import React, { useState } from 'react';
-import { db, storage } from '../../firebase.js'; // Убедитесь, что storage импортирован
-import { collection, addDoc } from "firebase/firestore";
+// import { db, storage } from '../../firebase.js'; // Убедитесь, что storage импортирован
+// import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const AddCar = () => {

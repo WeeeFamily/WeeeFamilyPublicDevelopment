@@ -4,10 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Firebase Hosting</title>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-     <!-- Добавьте дополнительные SDK, которые вам нужны -->
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+ <script type="module">
+    // Импорт модулей Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getMessaging } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
+
+    // Конфигурация Firebase вашего проекта
+<!--    const firebaseConfig = {-->
+<!--  apiKey: "AIzaSyALmz_iK6vTBCsuyzjBkXJtrGaXqyBIOnc",-->
+<!--  authDomain: "weee-company.firebaseapp.com",-->
+<!--  projectId: "weee-company",-->
+<!--  storageBucket: "weee-company.appspot.com",-->
+<!--  messagingSenderId: "615215622416",-->
+<!--  appId: "1:615215622416:web:398d3dfd33b02c1f8edd95",-->
+<!--  measurementId: "G-GCQLKKL67W"-->
+<!--};-->
+
+<!--    // Инициализация Firebase-->
+<!--    const app = initializeApp(firebaseConfig);-->
+<!--    const messaging = getMessaging(app);-->
+<!--    const storage = getStorage(app);-->
+<!--    const analytics = getAnalytics(app);-->
+</script>
+     <script type="module" src="../src/App.js"></script>
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/10.12.4/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -44,20 +65,20 @@
   <body>
 
   <h1>Welcome to My App</h1>
-  <script>
-    // Firebase конфигурация вашего проекта
-    var firebaseConfig = {
-      apiKey: "AIzaSyALmz_iK6vTBCsuyzjBkXJtrGaXqyBIOnc",
-  authDomain: "weee-company.firebaseapp.com",
-  projectId: "weee-company",
-  storageBucket: "weee-company.appspot.com",
-  messagingSenderId: "615215622416",
-  appId: "1:615215622416:web:398d3dfd33b02c1f8edd95",
-  measurementId: "G-GCQLKKL67W"
-    };
-    // Инициализация Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
+<!--  <script>-->
+<!--    // Firebase конфигурация вашего проекта-->
+<!--    var firebaseConfig = {-->
+<!--      apiKey: "AIzaSyALmz_iK6vTBCsuyzjBkXJtrGaXqyBIOnc",-->
+<!--  authDomain: "weee-company.firebaseapp.com",-->
+<!--  projectId: "weee-company",-->
+<!--  storageBucket: "weee-company.appspot.com",-->
+<!--  messagingSenderId: "615215622416",-->
+<!--  appId: "1:615215622416:web:398d3dfd33b02c1f8edd95",-->
+<!--  measurementId: "G-GCQLKKL67W"-->
+<!--    };-->
+<!--    // Инициализация Firebase-->
+<!--    firebase.initializeApp(firebaseConfig);-->
+<!--  </script>-->
 
 
     <div id="message">

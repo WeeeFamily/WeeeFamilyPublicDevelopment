@@ -6,8 +6,8 @@ import Slider from "react-slick";
 import ProductItem from "../ProductItem/ProductItem.jsx";
 import { useTelegram } from "../hooks/useTelegram.jsx";
 import FilterBar from "../Filters/FilterBar.js";
-import { db } from '../../firebase.js';
-import { collection, getDocs } from "firebase/firestore";
+// import { db } from '../../firebase.js';
+// import { collection, getDocs } from "firebase/firestore";
 import NavBar from '../NavBar/NavBar';
 
 const banners = [
