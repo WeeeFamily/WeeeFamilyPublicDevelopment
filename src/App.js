@@ -9,6 +9,7 @@ import Profile from "./Components/Profile/Profile";
 import NavBar from "./Components/NavBar/NavBar";
 import Map from "./Components/Map/map";
 
+
 function App() {
     const {onToggleButton,tg} =useTelegram();
 
