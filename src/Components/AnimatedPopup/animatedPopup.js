@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../Map/animatedPopup.css';
-import map from "../Map/map"; // CSS файл для кастомных стилей
+import map from "../Map/map.jsx"; // CSS файл для кастомных стилей
 
 const AnimatedMap = () => {
     const mapContainerRef = useRef(null);

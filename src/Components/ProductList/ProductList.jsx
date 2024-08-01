@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductList.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import ProductItem from "../ProductItem/ProductItem";
-import { useTelegram } from "../hooks/useTelegram";
-import FilterBar from "../Filters/FilterBar";
+import ProductItem from "../ProductItem/ProductItem.jsx";
+import { useTelegram } from "../hooks/useTelegram.jsx";
+import FilterBar from "../Filters/FilterBar.js";
+// import { db } from '../../firebase.js';
+// import { collection, getDocs } from "firebase/firestore";
 import NavBar from '../NavBar/NavBar';
-
-const products = [
-    { id: '1', title: 'Toyota Rav 4', price: 100, description: 'Ideal for city, travel and mountainous areas.', img: '/PhotoCars/toyota-rav4.jpg', brand: 'Toyota', class: 'SUV', partner: 'Partner 2' },
-    { id: '2', title: 'Volkswagen Zhuk', price: 50, description: 'Ideal for filming and events.', img: '/PhotoCars/volkswagen-zhuk.jpg', brand: 'Volkswagen', class: 'Compact', partner: 'Partner 1' },
-    { id: '3', title: 'Dodge Charger', price: 110, description: 'Ideal for the city and filming, driving outside the city.', img: '/PhotoCars/dodge-charger.jpg', brand: 'Dodge', class: 'Sedan', partner: 'Partner 1' },
-];
 
 const banners = [
 
@@ -21,11 +17,27 @@ const banners = [
 ];
 
 const ProductList = () => {
-    const [filteredProducts, setFilteredProducts] = useState(products);
+    const [products, setProducts] = useState([]); // Оригинальные данные продуктов
+    const [filteredProducts, setFilteredProducts] = useState([]); // Отфильтрованные данные
     const { tg } = useTelegram();
 
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "products"));
+                const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setProducts(productsData);
+                setFilteredProducts(productsData); // Установим изначально все продукты
+            } catch (error) {
+                console.error("Error fetching products: ", error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
     const sortProducts = (order, type) => {
-        const sorted = [...filteredProducts].sort((a, b) => {
+        const sorted = [...products].sort((a, b) => {
             if (type === 'price') {
                 return order === 'asc' ? a.price - b.price : b.price - a.price;
             } else if (type === 'brand') {
@@ -36,69 +48,70 @@ const ProductList = () => {
             return 0;
         });
         setFilteredProducts(sorted);
-    }
+    };
 
     const handleFilterChange = (type, value) => {
+        let filtered = [];
         if (type === 'all') {
-            setFilteredProducts(products);
+            setFilteredProducts(products); // Отображаем все продукты
         } else if (type === 'partner') {
-            const filtered = products.filter(product => product.partner === value);
+            filtered = products.filter(product => product.partner === value);
             setFilteredProducts(filtered);
         } else if (type === 'price') {
-            sortProducts(value, 'price'); // значение value уже содержит порядок сортировки ('asc' или 'desc')
+            sortProducts(value, 'price');
         } else if (type === 'class') {
-            const filtered = products.filter(product => product.class === value);
+            filtered = products.filter(product => product.class === value);
             setFilteredProducts(filtered);
         } else if (type === 'brand') {
-            const filtered = products.filter(product => product.brand === value);
+            filtered = products.filter(product => product.brand === value);
             setFilteredProducts(filtered);
         }
-    }
+    };
 
     const sliderSettings = {
-    dots: false,
-    infinite: false, // Отключаем бесконечное прокручивание
-    speed: 500,
-    slidesToShow: 1, // Количество слайдов, отображаемых за раз
-    slidesToScroll: 1, // Количество слайдов, прокручиваемых за раз// Показываем стрелки для навигации
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: false,
-                dots: false
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
-};
+        ]
+    };
 
     return (
         <div className={'product-list'}>
-
             <div className="banner-slider">
-                <Slider {...sliderSettings}> {banners.map(banner => (
+                <Slider {...sliderSettings}>
+                    {banners.map(banner => (
                         <div key={banner.id} className="video-container">
                             <video src={banner.video}
                                    className="banner-video"
                                    autoPlay muted loop playsInline
-                                   poster={banner.poster} // Устанавливаем изображение-заглушку
+                                   poster={banner.poster}
                             />
                             <div className="banner-text"></div>
                         </div>
@@ -107,16 +120,18 @@ const ProductList = () => {
             </div>
             <FilterBar onFilterChange={handleFilterChange} />
             <div className={'list'}>
-                {filteredProducts.map(item => (
-                    <ProductItem
-                        key={item.id}
-                        product={item}
-                        className={'item'}
-                    />
-                ))}
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map(item => (
+                        <ProductItem
+                            key={item.id}
+                            product={item}
+                            className={'item'}
+                        />
+                    ))
+                ) : (
+                    <p>No products available</p>
+                )}
             </div>
-
-
         </div>
     );
 };

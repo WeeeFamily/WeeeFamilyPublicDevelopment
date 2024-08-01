@@ -3,6 +3,10 @@
     padding: 1px; /* Убираем padding по умолчанию */
     margin: 1px; /* Убираем margin по умолчанию */
     box-sizing: border-box; /* Обеспечиваем, чтобы padding и border учитывались в общей ширине и высоте элемента */
+
+    .all-input {
+       padding-bottom: 108px;
+    }
 }
 .h2 {
     font-family: 'Roboto', sans-serif;
@@ -23,6 +27,7 @@
     border-radius: 10px; /* Закругленные углы */
     background-color: #f9f9f9; /* Фоновый цвет */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+
 }
 
 /* Стиль для полей ввода */
@@ -33,6 +38,7 @@
     border: 1px solid #ccc; /* Граница поля */
     border-radius: 5px; /* Закругленные углы */
     font-size: 16px; /* Размер шрифта */
+
 }
 
 /* Стиль для выпадающего списка */

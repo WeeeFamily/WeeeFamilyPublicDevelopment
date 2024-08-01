@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import firebaseReact, { useCallback, useEffect, useState } from 'react';
 import './Form.css';
-import { useTelegram } from "../hooks/useTelegram";
+import { useTelegram } from "../hooks/useTelegram.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios'; // Добавлен импорт Axios
 import Button from "../button/Button";
@@ -102,6 +102,8 @@ const Form = () => {
                          /> {/* Добавляем стикер */}
                      </div>
 
+                     <div className="all-input">
+
                      <div className="input-group">
                          <input
                              className={'input'}
@@ -112,6 +114,7 @@ const Form = () => {
                          />
                          <i className="fas fa-car-side"></i>
                      </div>
+
 
                      <div className="input-group">
                          <select value={city} onChange={onChangeCity} className={'select'}>
@@ -162,6 +165,8 @@ const Form = () => {
                              required
                          />
                          <i className="fas fa-phone"></i>
+                     </div>
+
                      </div>
 
 

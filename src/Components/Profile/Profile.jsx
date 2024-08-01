@@ -1,34 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import './Profile.css';
+// import { doc, setDoc, getDoc } from 'firebase/firestore';
+// import { db } from '../../firebase.js'
 
 const Profile = () => {
     const [user, setUser] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         username: '',
-        avatar: '/User/newUserPhoto1.jpg', // Исправленный путь к дефолтной фотографии
+        avatar: '/User/newUserPhoto1.jpg', // Дефолтная фотография
         phoneNumber: '',
         bio: '',
-
     });
     const [isEditing, setIsEditing] = useState(false);
 
-   useEffect(() => {
-        if (window.Telegram.WebApp) {
-            const tg = window.Telegram.WebApp;
-            const userData = tg.initDataUnsafe.user;
-            if (userData) {
-                setUser(prevState => ({
-                    ...prevState,
-                    firstName: userData.first_name || '',
-                    lastName: userData.last_name || '',
-                    username: userData.username ? `@${userData.username}` : '',
-                    avatar: userData.photo_url || prevState.avatar,
-                    phoneNumber: userData.phone_number || '', // Предполагаем, что phone_number есть в данных пользователя
-                    bio: userData.bio || '', // Предполагаем, что bio есть в данных пользователя
-                }));
+    // Получение уникального идентификатора пользователя из аутентификации
+    const userId = 'uniqueUserId'; // Это должен быть реальный идентификатор пользователя
+
+    useEffect(() => {
+        // Функция для получения данных пользователя из Firestore
+        const loadUserData = async () => {
+            const docRef = doc(db, 'profiles', userId);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                setUser(docSnap.data());
+            } else {
+                console.log('No such document!');
             }
-        }
-    }, []);
+        };
+
+        loadUserData();
+    }, [userId]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -51,9 +54,24 @@ const Profile = () => {
         }
     };
 
-    const saveProfile = () => {
-        console.log('Profile saved:', user);
-        setIsEditing(false);
+    const saveProfile = async () => {
+        try {
+            // Проверка данных перед сохранением
+            const profileData = {
+                firstName: user.firstName.trim(),
+                lastName: user.lastName.trim(),
+                username: user.username.trim(),
+                avatar: user.avatar,
+                phoneNumber: user.phoneNumber.trim(),
+                bio: user.bio.trim(),
+            };
+
+            await setDoc(doc(db, 'profiles', userId), profileData);
+            console.log('Profile saved:', profileData);
+            setIsEditing(false);
+        } catch (error) {
+            console.error('Error saving profile:', error);
+        }
     };
 
     return (
@@ -63,11 +81,9 @@ const Profile = () => {
                 <img src={user.avatar} alt="Avatar" />
                 {isEditing && (
                     <>
-                        {/* Кастомная кнопка для выбора файла */}
                         <label htmlFor="avatar-upload" className="custom-file-upload">
                             Choose File
                         </label>
-                        {/* Скрытый инпут для выбора файла */}
                         <input id="avatar-upload" type="file" accept="image/*" onChange={handleAvatarChange} />
                     </>
                 )}
